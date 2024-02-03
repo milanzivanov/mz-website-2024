@@ -21,6 +21,8 @@ $logo-color-dark: #1971c2;
   --bg-color-dark-1: #{$bg-color-dark-1};
   --bg-color-dark-2: #{$bg-color-dark-2};
   --logo-dark: #{$logo-color-dark};
+
+  --gradient-color: linear-gradient(90deg, #4ca5ff, #b573f8);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -55,7 +57,6 @@ $logo-color-dark: #1971c2;
   --logo-color: var(--logo-light);
 }
 
-//////////////////
 .theme {
   background-color: $default-black-color;
   width: 50px;

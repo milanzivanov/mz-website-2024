@@ -27,12 +27,8 @@
 .h1-primary-title--text-bold {
   font-family: $font-secondary;
   font-weight: 800;
-  color: var(--logo-bg) !important;
-
-  background-size: 400%;
-
+  background: var(--gradient-color);
   -webkit-text-fill-color: transparent;
-  background: linear-gradient(90deg, #4ca5ff, #b573f8);
   -webkit-background-clip: text;
   background-clip: text;
 
@@ -63,8 +59,8 @@
   padding: 1rem 0;
   width: 100%;
 
+  background: var(--gradient-color);
   -webkit-text-fill-color: transparent;
-  background: linear-gradient(90deg, #1971c2, #b573f8);
   -webkit-background-clip: text;
   background-clip: text;
 
@@ -84,12 +80,11 @@
 .h3-primary-title {
   font-family: $font-primary;
   font-weight: 600;
-  color: var(--logo-color);
   font-size: 1.5rem;
   width: 100%;
 
+  background: var(--gradient-color);
   -webkit-text-fill-color: transparent;
-  background: linear-gradient(90deg, #1971c2, #b573f8);
   -webkit-background-clip: text;
   background-clip: text;
 

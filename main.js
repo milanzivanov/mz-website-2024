@@ -1,6 +1,6 @@
 import "./scss/main.scss";
 
-// test
+// static audio url
 import audioLightOnUrl from "./audio/light-on.mp3";
 import audioLightOffUrl from "./audio/light-off.mp3";
 document.querySelector(".theme-audio--light-on").src = audioLightOnUrl;
@@ -213,7 +213,7 @@ function populateWorks(data) {
   for (const work of works) {
     const containerProjects = document.createElement("div");
     containerProjects.className = "project__container border-radius";
-    containerProjects.setAttribute("data-aos", "flip-left");
+    // containerProjects.setAttribute("data-aos", "flip-left");
 
     //
     const projectItem = document.createElement("div");
