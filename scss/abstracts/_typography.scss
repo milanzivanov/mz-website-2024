@@ -6,7 +6,7 @@
   font-size: 3rem;
   line-height: 1.1;
   width: 100%;
-  color: var(--bg1);
+  color: var(--text);
   font-style: normal;
   text-align: left;
   z-index: 5;
@@ -16,6 +16,7 @@
   }
 
   @include breakpoint(large-desktop) {
+    color: var(--bg1);
     width: inherit;
     font-size: 5rem;
     line-height: 1.2;
