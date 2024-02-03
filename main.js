@@ -1,5 +1,11 @@
 import "./scss/main.scss";
 
+// test
+import audioLightOnUrl from "./audio/light-on.mp3";
+import audioLightOffUrl from "./audio/light-off.mp3";
+document.querySelector(".theme-audio--light-on").src = audioLightOnUrl;
+document.querySelector(".theme-audio--light-off").src = audioLightOffUrl;
+
 ///////////////////
 // dark light theme
 const themeBtn = document.querySelector(".theme");
