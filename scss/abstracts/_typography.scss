@@ -1,0 +1,137 @@
+/**
+ * Basic typography style for copy text
+ */
+.h1-primary-title {
+  position: relative;
+  font-size: 3.3rem;
+  line-height: 1.1;
+  width: 100%;
+  color: var(--bg1);
+  font-style: normal;
+  text-align: left;
+  z-index: 5;
+
+  @include breakpoint(desktop) {
+    font-size: 4rem;
+  }
+
+  @include breakpoint(large-desktop) {
+    width: inherit;
+    font-size: 5rem;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+}
+
+.h1-primary-title--text-bold {
+  font-family: $font-secondary;
+  font-weight: 800;
+  color: var(--logo-bg) !important;
+
+  background-size: 400%;
+
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #4ca5ff, #b573f8);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  animation: gradient 10s ease infinite;
+}
+
+.hero--block {
+  display: block;
+}
+
+.hero-container__text--pl {
+  padding: 1rem 0 1rem 1rem;
+
+  @include breakpoint(large-desktop) {
+    padding: 0 0 0 1rem;
+  }
+}
+
+.h2-primary-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-primary;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 auto;
+  padding: 1rem 0;
+  width: 100%;
+
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #1971c2, #b573f8);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  @include breakpoint(large-desktop) {
+    width: 50%;
+    padding: 2rem 0;
+    margin: 5rem auto 0 auto;
+    font-size: 1.9rem;
+  }
+}
+
+.h2-primary-title--about {
+  position: relative;
+  letter-spacing: 0.5px;
+}
+
+.h3-primary-title {
+  font-family: $font-primary;
+  font-weight: 600;
+  color: var(--logo-color);
+  font-size: 1.5rem;
+  width: 100%;
+
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #1971c2, #b573f8);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  @include breakpoint(large-desktop) {
+    font-size: 1.7rem;
+  }
+}
+
+.h3-primary-title--footer {
+  font-size: 2.1rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: $white;
+  color: var(--logo-color);
+  margin-bottom: 2rem;
+}
+
+// paragraphs
+.paragraph-text {
+  position: relative;
+  z-index: 5;
+  text-align: inherit;
+  font-size: 1rem;
+  padding: 1rem 0;
+
+  strong {
+    color: var(--logo-color);
+  }
+
+  @include breakpoint(large-desktop) {
+    font-size: 1.125rem;
+  }
+}
+
+.paragraph-text--about {
+  box-shadow: 1px 1px 1px #d6e2ed;
+  box-shadow: none;
+}
+
+.paragraph-text--project {
+  margin: 0;
+}
+
+.paragraph-text--border-bottom {
+  border-bottom: 1px solid #d6e2ed;
+}

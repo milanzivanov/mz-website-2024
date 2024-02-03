@@ -1,0 +1,231 @@
+.header {
+  width: 100%;
+  position: relative;
+}
+
+.header.sticky {
+  background-color: var(--bg2);
+  position: fixed;
+  z-index: 20;
+  transition: all 300ms;
+  border-bottom: 5px solid var(--bg1);
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+
+  background-color: var(--bg2);
+  // background: linear-gradient(to bottom, #c5cad4, #c1c7d3);
+  // background: linear-gradient(to bottom, #22232a, #25262b);
+  padding: 1rem;
+}
+
+.header__logo {
+  height: 60px;
+  width: 60px;
+  z-index: 10;
+
+  @include breakpoint(large-desktop) {
+    margin-left: 5%;
+  }
+
+  a {
+    display: block;
+  }
+
+  @include breakpoint(desktop) {
+    height: 70px;
+    width: 70px;
+    margin-left: 0;
+  }
+}
+
+// nav desktop
+.nav-desktop {
+  display: none;
+}
+
+@include breakpoint(desktop) {
+  .nav-desktop {
+    display: flex;
+    z-index: 10;
+    margin: 0 auto 0 3rem;
+  }
+
+  .nav-desktop__list {
+    display: flex;
+  }
+
+  .nav-desktop__link {
+    display: inline-block;
+    color: var(--text);
+    font-size: 1.1rem;
+    margin-left: 1.5rem;
+    transition: 0.5ms all ease-in-out;
+    font-family: $font-primary;
+
+    &:hover {
+      color: var(--logo-color);
+    }
+  }
+}
+
+@include breakpoint(large-desktop) {
+  .nav-desktop__link {
+    font-size: 1.3rem;
+  }
+}
+
+.header__btn {
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+
+  @include breakpoint(desktop) {
+    margin-right: 5%;
+    display: none;
+  }
+}
+
+// hamburger icon
+.nav-toggle-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border: none;
+  padding: 0;
+  background-color: $white;
+  text-align: center;
+  border-radius: 5px;
+
+  @include breakpoint(desktop) {
+    width: 70px;
+    height: 70px;
+  }
+
+  // making the dividers
+  > span {
+    display: inline-block;
+    position: relative;
+    height: 3px;
+    width: 34px;
+    border-radius: 1px;
+    background: $default-black-color;
+    vertical-align: middle;
+
+    &:before,
+    &:after {
+      display: inline-block;
+      position: absolute;
+      content: "";
+      height: 3px;
+      border-radius: 1px;
+      background: $default-black-color;
+      transition: all 200ms;
+    }
+    &:before {
+      top: -11px;
+      left: 0;
+      width: 34px;
+    }
+    &:after {
+      top: 11px;
+      left: 0;
+      width: 34px;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover > span:after,
+  &:hover > span:before {
+    width: 34px;
+    left: 0;
+  }
+}
+
+// active hamburger state
+.nav-toggle-btn.active > span {
+  height: 0;
+  &:after,
+  &:before {
+    width: 34px;
+    top: 0px;
+    left: 0;
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+}
+
+// beckdrop
+.nav-backdrop-container {
+  position: fixed;
+  background-color: rgb(27 27 28 / 70%);
+  transform: translate(100%, -100%);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.nav-backdrop-container.active {
+  transform: translate(0, 0);
+}
+
+// nav mobile
+nav.nav {
+  background-color: $default-black-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  inset: 0 0 0 0;
+  z-index: 10;
+
+  @include breakpoint(desktop) {
+    width: 50%;
+  }
+}
+
+ul.nav__list {
+  list-style: none;
+
+  li {
+    a {
+      font-family: $font-primary;
+      font-weight: 400;
+      color: $white;
+      font-size: 1.7rem;
+      padding-bottom: 1rem;
+      display: block;
+      text-decoration: none;
+      text-align: start;
+      text-transform: uppercase;
+      transition: all 0.3s ease-in-out;
+
+      @include breakpoint(desktop) {
+        font-size: 3rem;
+      }
+
+      &:hover {
+        color: $default-black-color;
+      }
+    }
+  }
+}

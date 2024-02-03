@@ -1,0 +1,66 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+//
+@mixin flexCHV {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin displayHide {
+  display: none;
+}
+
+/* ----------------- Media queris mobile first
+----------------------------------------------------------------------- */
+
+@mixin breakpoint($point) {
+  @if $point == "mobile" {
+    @media only screen and (min-width: 360px) {
+      @content;
+    }
+  } @else if $point == "tablet" {
+    @media only screen and (min-width: 480px) {
+      @content;
+    }
+  } @else if $point == "desktop" {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == "large-desktop" {
+    @media only screen and (min-width: 1024px) {
+      @content;
+    }
+  } @else if $point == "extra-large-desktop" {
+    @media only screen and (min-width: 1366px) {
+      @content;
+    }
+  } @else {
+    @media only screen and (min-width: $point) {
+      @content;
+    }
+  }
+}
+
+/* ----------------- Media queris desktop first
+----------------------------------------------------------------------- */
+
+// @mixin breakpoint ($point) {
+//     @if $point == 'mobile' {
+//         @media only screen and (min-width: 120px) and (max-width : 767px) { @content; }
+//     }
+
+//     @else if $point == 'tablet' {
+//         @media only screen and (min-width: 768px) and (max-width : 1399px) { @content; }
+//     }
+
+//     @else if $point == 'desktop' {
+//         @media only screen and (min-width: 1400px) { @content; }
+//     }
+
+//     @else {
+//         @media only screen and (min-width: $point) { @content; }
+//     }
+// }

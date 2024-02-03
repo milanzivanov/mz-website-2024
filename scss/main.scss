@@ -1,0 +1,291 @@
+@charset "UTF-8";
+
+@import "abstracts/variables", "abstracts/mixins", "abstracts/typography";
+@import "base/general", "base/fonts", "base/helpers", "base/reset",
+  "./base/animations";
+@import "./themes/dark-light-theme";
+@import "layout/footer", "layout/header";
+@import "components/buttons", "components/icons", "components/sliders.scss";
+@import "pages/home";
+
+////////////////////////////
+/// main
+main.container {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  animation: none;
+  height: 100vh;
+}
+
+.hero {
+  height: calc(100% - 107px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__bg {
+  display: flex;
+  background-color: var(--text);
+  // background: linear-gradient(-90deg, rgba(2, 2, 2, 0.7), var(--text)),
+  //   url(https://ik.imagekit.io/milanz/milanzivanov_com/personal-site-2022/common-bg_p7seAoLVe.svg);
+  width: 100%;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 0;
+  width: 100%;
+  overflow: hidden;
+
+  @include breakpoint(large-desktop) {
+    flex-direction: row;
+  }
+}
+
+//////////////////
+// about
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+  padding: 0;
+  background-color: var(--bg2);
+
+  @include breakpoint(large-desktop) {
+    flex-direction: row;
+    padding: 0 0 2.5rem 0;
+  }
+}
+
+.about-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background-color: $white;
+
+  box-shadow: 0 2px 10px rgba(45, 45, 45, 0.1);
+
+  @include breakpoint(large-desktop) {
+    flex-direction: row;
+    margin: 0;
+  }
+}
+
+.about-container__text {
+  padding: 1rem;
+}
+
+.about-container__box {
+  position: relative;
+  flex: 1;
+}
+
+.about-container__box--left {
+  background-color: var(--text);
+}
+
+//////////////////
+// skills and tools
+.skills {
+  padding: 0 0 2.5rem 0;
+}
+
+.skills-container-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow: hidden;
+  background-color: $white;
+
+  box-shadow: 0 2px 10px rgba(45, 45, 45, 0.1);
+
+  @include breakpoint(desktop) {
+    margin: auto;
+  }
+  @include breakpoint(large-desktop) {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+.skill-icon {
+  display: flex;
+  background-color: var(--bg1);
+  color: var(--logo-color);
+  flex-direction: column;
+  flex: 0 1 calc(50% - 0.5rem);
+  padding: 0.5rem;
+  align-items: center;
+  font-size: 1.5rem;
+
+  @include breakpoint(tablet) {
+    flex: 1 1 25%;
+  }
+  @include breakpoint(desktop) {
+    flex: 1 1 15%;
+    font-size: 2rem;
+  }
+  @include breakpoint(large-desktop) {
+    font-size: 2.5rem;
+  }
+
+  p {
+    padding-top: 0.5rem;
+    text-transform: capitalize;
+    color: var(--logo-color);
+    font-size: 1rem;
+
+    @include breakpoint(desktop) {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+//////////////////
+// projects
+.projects {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg2);
+}
+
+.project__container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 7rem;
+  transition: all 0.3s ease-in-out;
+
+  box-shadow: 0 2px 10px rgba(45, 45, 45, 0.1);
+
+  @include breakpoint(large-desktop) {
+    flex-direction: row;
+  }
+}
+
+.project__container:hover {
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  -webkit-transform: scale(1.01);
+  -ms-transform: scale(1.01);
+  transform: scale(1.01);
+}
+
+.project__item {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  align-content: center;
+  background-color: #fff;
+}
+
+.project__item--bg-left {
+  background-color: var(--text);
+}
+
+.project__text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+.project__text-container--description {
+  padding-bottom: 2rem;
+}
+
+.skill-container {
+  padding: 0.5rem;
+  background-color: var(--bg2);
+}
+
+.paragraph-strong {
+  font-weight: bold;
+  color: var(--logo-color);
+}
+
+.skill-container {
+  padding: 0.5rem;
+}
+
+.list-icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    padding: 0.3rem 0.3rem 0.3rem 0;
+  }
+}
+
+.devicon {
+  font-size: 1.5rem;
+  color: var(--logo-color);
+  margin-right: 0.3rem;
+}
+
+////////////////////
+// BTT
+.back-to-top-container__btn {
+  display: none;
+  background-color: var(--bg1);
+  position: fixed;
+  padding: 10px;
+  bottom: 25px;
+  right: 50%;
+  transform: translateX(50%);
+  margin: 5px;
+  z-index: 20;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+
+  @include breakpoint(large-desktop) {
+    right: 25px;
+    transform: none;
+  }
+}
+
+.back-to-top-container__btn:hover {
+  background-color: var(--text);
+}
+
+.btn-to-top {
+  height: 3.5rem;
+  width: 3.5rem;
+
+  @include breakpoint(desktop) {
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+.show-fire {
+  display: none;
+  position: absolute;
+  height: 3.5rem;
+  width: 3.5rem;
+
+  @include breakpoint(desktop) {
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+.back-to-top.show {
+  display: flex;
+}
+
+.show-fire.show {
+  display: block;
+}

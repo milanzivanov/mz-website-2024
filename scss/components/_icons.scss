@@ -1,0 +1,23 @@
+//
+.icon-arrow {
+  display: inline-block;
+  width: 30px;
+  height: 50px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: none;
+  color: var(--logo-color);
+}
+
+.icon {
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.svg-logo {
+  fill: var(--logo-color);
+}

@@ -1,0 +1,80 @@
+/////////////////////
+/// dark light mode
+
+$text-color-light: #241c3b;
+$bg-color-light-1: #c5cad4;
+$bg-color-light-2: #c1c7d3;
+$logo-color-light: #8363ea;
+
+$text-color-dark: #d0ddf1;
+$bg-color-dark-1: #22232a;
+$bg-color-dark-2: #25262b;
+$logo-color-dark: #1971c2;
+
+:root {
+  --text-color-light: #{$text-color-light};
+  --bg-color-light-1: #{$bg-color-light-1};
+  --bg-color-light-2: #{$bg-color-light-2};
+  --logo-light: #{$logo-color-light};
+
+  --text-color-dark: #{$text-color-dark};
+  --bg-color-dark-1: #{$bg-color-dark-1};
+  --bg-color-dark-2: #{$bg-color-dark-2};
+  --logo-dark: #{$logo-color-dark};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg1: #{$bg-color-dark-1};
+    --bg2: #{$bg-color-dark-2};
+    --text: #{$text-color-dark};
+    --logo-color: #{$logo-color-dark};
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg1: #{$bg-color-light-1};
+    --bg2: #{$bg-color-light-2};
+    --text: #{$text-color-light};
+    --logo-color: #{$logo-color-light};
+  }
+}
+
+[color-scheme="dark"] {
+  --bg1: var(--bg-color-dark-1);
+  --bg2: var(--bg-color-dark-2);
+  --text: var(--text-color-dark);
+  --logo-color: var(--logo-dark);
+}
+
+[color-scheme="light"] {
+  --bg1: var(--bg-color-light-1);
+  --bg2: var(--bg-color-light-2);
+  --text: var(--text-color-light);
+  --logo-color: var(--logo-light);
+}
+
+//////////////////
+.theme {
+  background-color: $default-black-color;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid var(--logo-color);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.theme:is(:hover, :focus) {
+  background-color: $default-black-color;
+  opacity: 0.8;
+}
+
+.bkg2--stroke {
+  stroke: #ffd475;
+  fill: #ffd475;
+}

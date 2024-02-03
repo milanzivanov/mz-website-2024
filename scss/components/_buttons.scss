@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+// buttons
+.btn {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+
+  @include breakpoint(tablet) {
+    width: 30%;
+  }
+  @include breakpoint(large-desktop) {
+    width: 45%;
+  }
+  @include breakpoint(extra-large-desktop) {
+    width: 40%;
+  }
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn--theme {
+  background-color: var(--logo-color);
+  color: $white;
+}
+
+.btn--size {
+  padding: 0.5rem 2rem;
+  font-size: 0.75rem;
+
+  @include breakpoint(desktop) {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,38 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$font-primary: "Inter", "system-ui", sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$font-secondary: "Poppins", "Inter", system-ui, sans-serif, monospace !default;
+
+/// Copy text color
+/// @type Color
+$default-black-color: #16191e !default;
+
+/// White
+/// @type Color
+$white: #fff !default;
+
+/// black
+/// @type Color
+$black: #000 !default;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1200px !default;
+
+/// Default font size
+/// @type Length
+$default-font-size: 1.6rem !default;
+
+// FONT
+// $default-font-size: 1.6rem;
+
+// my old collor palete
+// $primary-blue: #23a6d5;
+// $secondery-blue: #0071bc;
