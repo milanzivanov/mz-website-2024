@@ -2,6 +2,8 @@
  * Basic typography style for copy text
  */
 .h1-primary-title {
+  font-family: $font-primary;
+  font-weight: 400;
   position: relative;
   font-size: 2.7rem;
   line-height: 1.2;
@@ -20,7 +22,6 @@
     width: inherit;
     font-size: 5rem;
     line-height: 1.2;
-    font-weight: 400;
   }
 }
 

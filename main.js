@@ -194,8 +194,7 @@ function populateSkills(data) {
     output += `
       <div class="skill-icon border-radius">
         <i 
-          class="${skill.iconClass}"
-          data-aos="fade-up">
+          class="${skill.iconClass}">
         </i>
         <p>${skill.iconTitle}</p>
       </div>

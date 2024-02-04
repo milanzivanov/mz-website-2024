@@ -1,3 +1,3 @@
 export default {
-  assetsInclude: ["./audio/*.mp3"]
+  assetsInclude: ["**/*.mp3"]
 };
