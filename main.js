@@ -231,6 +231,7 @@ function populateWorks(data) {
     const imgProject = document.createElement("img");
     imgProject.src = work.src;
     imgProject.setAttribute("loading", "lazy");
+    imgProject.setAttribute("alt", work.title);
 
     //
     const projectRowText = document.createElement("div");
