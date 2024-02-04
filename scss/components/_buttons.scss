@@ -29,11 +29,12 @@
 
 .btn:hover {
   transform: translateY(-3px);
+  color: var(--logo-color);
 }
 
 .btn--theme {
-  background-color: var(--logo-color);
-  color: $white;
+  background-color: #0a2c4d;
+  color: #d0ddf1;
 }
 
 .btn--size {
@@ -41,6 +42,6 @@
   font-size: 0.75rem;
 
   @include breakpoint(large-desktop) {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
