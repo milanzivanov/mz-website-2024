@@ -150,8 +150,8 @@ main.container {
     color: $default-black-color;
     font-size: 1rem;
 
-    @include breakpoint(desktop) {
-      font-size: 0.8rem;
+    @include breakpoint(large-desktop) {
+      font-size: 1rem;
     }
   }
 }
