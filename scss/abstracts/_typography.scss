@@ -28,14 +28,13 @@
 .h1-primary-title--text-bold {
   font-family: $font-secondary;
   font-weight: 800;
-  color: var(--logo-color);
 
-  // background: var(--gradient-color);
-  // -webkit-text-fill-color: transparent;
-  // -webkit-background-clip: text;
-  // background-clip: text;
+  background: var(--gradient-color);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 
-  // animation: gradient 10s ease infinite;
+  animation: gradient 10s ease infinite;
 }
 
 .hero--block {
