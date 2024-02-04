@@ -147,7 +147,7 @@ main.container {
   p {
     padding-top: 0.5rem;
     text-transform: capitalize;
-    color: $default-black-color;
+    color: var(--logo-color);
     font-size: 1rem;
 
     @include breakpoint(large-desktop) {
