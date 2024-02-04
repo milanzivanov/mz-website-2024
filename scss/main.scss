@@ -132,14 +132,13 @@ main.container {
   flex: 0 1 calc(50% - 0.5rem);
   padding: 1rem 0.5rem;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
 
   @include breakpoint(tablet) {
     flex: 1 1 25%;
   }
   @include breakpoint(desktop) {
     flex: 1 1 15%;
-    font-size: 2rem;
   }
   @include breakpoint(large-desktop) {
     font-size: 2.5rem;
@@ -148,7 +147,7 @@ main.container {
   p {
     padding-top: 0.5rem;
     text-transform: capitalize;
-    color: var(--logo-color);
+    color: $default-black-color;
     font-size: 1rem;
 
     @include breakpoint(desktop) {
@@ -215,8 +214,9 @@ main.container {
 }
 
 .paragraph-strong {
-  font-weight: bold;
-  color: var(--logo-color);
+  font-weight: 500;
+  color: $default-black-color;
+  padding-bottom: 0.5rem;
 }
 
 .list-icon-container {
