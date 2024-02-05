@@ -4,8 +4,8 @@
 $text-color-light: #241c3b;
 $bg-color-light-1: #c5cad4;
 $bg-color-light-2: #c1c7d3;
-// $logo-color-light: #8363ea;
-$logo-color-light: #6366f1;
+// $logo-color-light: #6366f1;
+// $logo-color-light: #1114d4;
 $logo-color-light: #1b0b51;
 
 $text-color-dark: #d0ddf1;
@@ -24,7 +24,7 @@ $logo-color-dark: #1971c2;
   --bg-color-dark-2: #{$bg-color-dark-2};
   --logo-dark: #{$logo-color-dark};
 
-  --gradient-color: linear-gradient(90deg, #4ca5ff, #b573f8);
+  --gradient-color: linear-gradient(90deg, #4ca5ff, #6366f1);
 }
 
 @media (prefers-color-scheme: dark) {
