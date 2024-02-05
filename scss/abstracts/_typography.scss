@@ -34,7 +34,9 @@
   -webkit-background-clip: text;
   background-clip: text;
 
-  // animation: gradient 10s ease infinite;
+  @include breakpoint(large-desktop) {
+    animation: gradient 10s ease infinite;
+  }
 }
 
 .hero--block {
