@@ -28,13 +28,13 @@
 .h1-primary-title--text-bold {
   font-family: $font-secondary;
   font-weight: 800;
-
-  background: var(--gradient-color);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: var(--logo-color);
 
   @include breakpoint(large-desktop) {
+    background: var(--gradient-color);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
     animation: gradient 10s ease infinite;
   }
 }
@@ -56,19 +56,20 @@
   align-items: center;
   justify-content: center;
   font-family: $font-primary;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 800;
   margin: 3rem auto 1rem auto;
   padding: 1rem 0;
   width: 100%;
 
-  background: var(--gradient-color);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: var(--text);
 
   @include breakpoint(large-desktop) {
+    background: var(--gradient-color);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
     width: 50%;
     padding: 2rem 0;
     margin: 5rem auto 0 auto;
@@ -86,13 +87,13 @@
   font-weight: 600;
   font-size: 1.5rem;
   width: 100%;
-
-  background: var(--gradient-color);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: var(--logo-color);
 
   @include breakpoint(large-desktop) {
+    background: var(--gradient-color);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
     font-size: 1.7rem;
   }
 }

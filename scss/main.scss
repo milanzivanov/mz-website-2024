@@ -29,6 +29,7 @@ main.container {
   display: flex;
   background-color: var(--bg2);
   width: 100%;
+  box-shadow: 0 2px 10px rgba(45, 45, 45, 0.1);
 
   @include breakpoint(large-desktop) {
     background-color: var(--text);
