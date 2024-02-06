@@ -212,9 +212,7 @@ function populateWorks(data) {
   for (const work of works) {
     const containerProjects = document.createElement("div");
     containerProjects.className = "project__container border-radius";
-    // containerProjects.setAttribute("data-aos", "flip-left");
 
-    //
     const projectItem = document.createElement("div");
     projectItem.classList.add(
       "project__item",
