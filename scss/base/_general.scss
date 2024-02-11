@@ -6,6 +6,7 @@ html {
   font-size: 112.5%; /*18px / 16px = 1.125px * 100 = 112.5% */
   scroll-behavior: smooth;
   background-color: var(--bg1);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 body {

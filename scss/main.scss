@@ -3,14 +3,14 @@
 @import "abstracts/variables", "abstracts/mixins", "abstracts/typography";
 @import "base/general", "base/fonts", "base/helpers", "base/reset",
   "./base/animations";
-@import "./themes/dark-light-theme";
+@import "./themes/theme";
 @import "layout/footer", "layout/header";
 @import "components/buttons", "components/icons", "components/sliders.scss";
 @import "pages/home";
 
 ////////////////////////////
 /// main
-main.container {
+.container {
   position: relative;
   overflow: hidden;
   background-size: cover;
