@@ -71,7 +71,6 @@ document.addEventListener("scroll", handleScroll);
 // get a reference to the button
 let scrollToTopBtn = document.querySelector(".back-to-top-container__btn");
 let showFire = document.querySelector(".show-fire");
-let showPath = document.querySelector(".back-to-top-path");
 
 function handleScroll() {
   let scrolableHeight =
