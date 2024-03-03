@@ -84,7 +84,7 @@
 .h3-primary-title {
   font-family: $font-primary;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   width: 100%;
   color: var(--logo-color);
 
@@ -98,11 +98,15 @@
 }
 
 .h3-primary-title--footer {
-  font-size: 2.1rem;
+  font-size: 1.5rem;
   padding: 1rem;
   background-color: $white;
   color: var(--logo-color);
   margin-bottom: 2rem;
+
+  @include breakpoint(large-desktop) {
+    font-size: 2.1rem;
+  }
 }
 
 // paragraphs
@@ -110,7 +114,7 @@
   position: relative;
   z-index: 5;
   text-align: inherit;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 1rem 0;
 
   strong {
