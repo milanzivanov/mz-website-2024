@@ -169,6 +169,31 @@ const handleHover = function (e, opacity) {
 nav.addEventListener("mouseover", handleHover.bind(0.3));
 nav.addEventListener("mouseout", handleHover.bind(1));
 
+//////////////////////////
+// Fade items into view while scrolling
+const faders = document.querySelectorAll(".fade-in");
+
+const appearOptions = {
+  threshold: 0,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      entry.target.classList.add("appear");
+      appearOnScroll.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+
+faders.forEach((fader) => {
+  appearOnScroll.observe(fader);
+});
+
+/////////////////////
 // json file with my fe works
 async function populate() {
   const requestURL = "https://milanzivanov.github.io/Data/works.json";
@@ -226,8 +251,7 @@ function populateWorks(data) {
     projectAnchorLink.target = "_blank";
 
     const imgProject = document.createElement("img");
-    imgProject.src = work.src;
-    imgProject.setAttribute("loading", "lazy");
+    imgProject.setAttribute("data-src", work.src);
     imgProject.setAttribute("alt", work.title);
 
     //
@@ -295,6 +319,37 @@ function populateWorks(data) {
       listItem.appendChild(listIcon);
     }
   }
+
+  ///////////////////////
+  // lazy loading with intersectionObserver
+  const images = document.querySelectorAll("img[data-src]");
+  console.log(images);
+
+  function preloadImage(img) {
+    const src = img.getAttribute("data-src");
+    if (!src) {
+      return;
+    }
+    img.src = src;
+  }
+  const imgOptions = {
+    threshold: 0,
+    rootMargin: "0px 0px 200px 0px"
+  };
+  const imgObserver = new IntersectionObserver((entries, imgObserver) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      } else {
+        preloadImage(entry.target);
+        imgObserver.unobserve(entry.target);
+      }
+    });
+  }, imgOptions);
+
+  images.forEach((image) => {
+    imgObserver.observe(image);
+  });
 }
 
 populate();

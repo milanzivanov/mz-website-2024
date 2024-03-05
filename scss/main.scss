@@ -73,7 +73,7 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   background-color: $white;
   box-shadow: 0 2px 10px rgba(45, 45, 45, 0.1);
@@ -232,6 +232,16 @@
   font-size: 1.5rem;
   color: var(--logo-color);
   margin-right: 0.3rem;
+}
+/////////////////////
+// fade in effect
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.fade-in.appear {
+  opacity: 1;
 }
 
 ////////////////////
