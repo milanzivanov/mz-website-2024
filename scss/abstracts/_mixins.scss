@@ -17,23 +17,23 @@
 ----------------------------------------------------------------------- */
 @mixin breakpoint($point) {
   @if $point == "mobile" {
-    @media only screen and (min-width: 360px) {
+    @media only screen and (min-width: 361px) {
       @content;
     }
   } @else if $point == "tablet" {
-    @media only screen and (min-width: 480px) {
+    @media only screen and (min-width: 481px) {
       @content;
     }
   } @else if $point == "desktop" {
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 769px) {
       @content;
     }
   } @else if $point == "large-desktop" {
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 1025px) {
       @content;
     }
   } @else if $point == "extra-large-desktop" {
-    @media only screen and (min-width: 1366px) {
+    @media only screen and (min-width: 1367px) {
       @content;
     }
   } @else {

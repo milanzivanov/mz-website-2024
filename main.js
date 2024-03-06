@@ -240,7 +240,7 @@ function populateWorks(data) {
 
   for (const work of works) {
     const containerProjects = document.createElement("div");
-    containerProjects.className = "project__container border-radius";
+    containerProjects.className = "project__container";
 
     const projectItem = document.createElement("div");
     projectItem.classList.add(
@@ -328,7 +328,6 @@ function populateWorks(data) {
   ///////////////////////
   // lazy loading with intersectionObserver
   const images = document.querySelectorAll("img[data-src]");
-  console.log(images);
 
   function preloadImage(img) {
     const src = img.getAttribute("data-src");

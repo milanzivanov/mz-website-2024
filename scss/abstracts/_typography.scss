@@ -6,20 +6,20 @@
   font-weight: 400;
   position: relative;
   font-size: 2.6rem;
-  line-height: 1.1125;
+  line-height: 1.1;
   width: 100%;
   color: var(--text);
   font-style: normal;
   text-align: left;
   z-index: 5;
 
-  @include breakpoint(desktop) {
-    font-size: 4rem;
-  }
-
   @include breakpoint(large-desktop) {
     color: var(--bg1);
     width: inherit;
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+  @include breakpoint(extra-large-desktop) {
     font-size: 5rem;
   }
 }
@@ -69,9 +69,13 @@
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    padding: 2rem 0;
+    padding: 2rem 0 1rem 0;
     margin: 5rem auto 0 auto;
-    font-size: 1.9rem;
+    font-size: 1.5rem;
+  }
+
+  @include breakpoint(extra-large-desktop) {
+    font-size: 1.7rem;
   }
 }
 
@@ -92,6 +96,10 @@
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+    font-size: 1.5rem;
+  }
+
+  @include breakpoint(extra-large-desktop) {
     font-size: 1.7rem;
   }
 }
