@@ -6,7 +6,7 @@
   font-weight: 400;
   position: relative;
   font-size: 2.6rem;
-  line-height: 1.3;
+  line-height: 1.1125;
   width: 100%;
   color: var(--text);
   font-style: normal;
@@ -14,7 +14,6 @@
   z-index: 5;
 
   @include breakpoint(desktop) {
-    line-height: 1.1;
     font-size: 4rem;
   }
 
@@ -22,7 +21,6 @@
     color: var(--bg1);
     width: inherit;
     font-size: 5rem;
-    line-height: 1.2;
   }
 }
 
