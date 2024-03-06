@@ -170,8 +170,9 @@ nav.addEventListener("mouseover", handleHover.bind(0.3));
 nav.addEventListener("mouseout", handleHover.bind(1));
 
 //////////////////////////
-// Fade items into view while scrolling
+// Fade items into view while scrolling and slide in
 const faders = document.querySelectorAll(".fade-in");
+const sliders = document.querySelectorAll(".slide-in");
 
 const appearOptions = {
   threshold: 0,
@@ -191,6 +192,10 @@ const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
 
 faders.forEach((fader) => {
   appearOnScroll.observe(fader);
+});
+
+sliders.forEach((slider) => {
+  appearOnScroll.observe(slider);
 });
 
 /////////////////////
