@@ -71,6 +71,10 @@
       color: var(--logo-color);
     }
   }
+
+  .nav-desktop__link::first-letter {
+    text-transform: uppercase;
+  }
 }
 
 @include breakpoint(extra-large-desktop) {
@@ -216,7 +220,7 @@ ul.nav__list {
       display: block;
       text-decoration: none;
       text-align: start;
-      text-transform: capitalize;
+      text-transform: lowercase;
       transition: all 0.3s ease-in-out;
 
       @include breakpoint(desktop) {
@@ -226,6 +230,9 @@ ul.nav__list {
       &:hover {
         color: var(--logo-color);
       }
+    }
+    a::first-letter {
+      text-transform: uppercase;
     }
   }
 }
