@@ -15,11 +15,13 @@ $logo-color-dark: #1971c2;
   --text-color-light: #{$text-color-light};
   --bg-color-light-1: #{$bg-color-light-1};
   --bg-color-light-2: #{$bg-color-light-2};
+  --bg-color-light-2-opacity-90: rgb(193, 199, 211, 0.85);
   --logo-light: #{$logo-color-light};
 
   --text-color-dark: #{$text-color-dark};
   --bg-color-dark-1: #{$bg-color-dark-1};
   --bg-color-dark-2: #{$bg-color-dark-2};
+  --bg-color-dark-2-opacity-90: rgb(37, 38, 43, 0.98);
   --logo-dark: #{$logo-color-dark};
 
   --gradient-color: linear-gradient(90deg, #4ca5ff, #6366f1);
@@ -29,6 +31,7 @@ $logo-color-dark: #1971c2;
   :root {
     --bg1: #{$bg-color-dark-1};
     --bg2: #{$bg-color-dark-2};
+    --bg-90: var(--bg-color-dark-2-opacity-90);
     --text: #{$text-color-dark};
     --logo-color: #{$logo-color-dark};
   }
@@ -38,6 +41,7 @@ $logo-color-dark: #1971c2;
   :root {
     --bg1: #{$bg-color-light-1};
     --bg2: #{$bg-color-light-2};
+    --bg-90: var(--bg-color-light-2-opacity-90);
     --text: #{$text-color-light};
     --logo-color: #{$logo-color-light};
   }
@@ -46,6 +50,7 @@ $logo-color-dark: #1971c2;
 [color-scheme="dark"] {
   --bg1: var(--bg-color-dark-1);
   --bg2: var(--bg-color-dark-2);
+  --bg-90: var(--bg-color-dark-2-opacity-90);
   --text: var(--text-color-dark);
   --logo-color: var(--logo-dark);
 }
@@ -53,6 +58,7 @@ $logo-color-dark: #1971c2;
 [color-scheme="light"] {
   --bg1: var(--bg-color-light-1);
   --bg2: var(--bg-color-light-2);
+  --bg-90: var(--bg-color-light-2-opacity-90);
   --text: var(--text-color-light);
   --logo-color: var(--logo-light);
 }

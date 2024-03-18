@@ -26,14 +26,24 @@
 }
 
 .hero__bg {
+  position: relative;
   display: flex;
   background-color: var(--bg2);
   width: 100%;
+
+  // background: url("/img/common-bg.svg") repeat;
 
   @include breakpoint(large-desktop) {
     background-color: var(--text);
   }
 }
+
+// .hero__bg::before {
+//   position: absolute;
+//   content: "";
+//   inset: 0 0 0 0;
+//   background-color: var(--bg-90);
+// }
 
 .hero-container {
   display: flex;
