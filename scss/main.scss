@@ -26,12 +26,11 @@
 }
 
 .hero__bg {
-  position: relative;
   display: flex;
-  background-color: var(--bg2);
+  position: relative;
   width: 100%;
-
   background: url("/img/it-wire.svg") repeat;
+  background-color: var(--bg2);
 
   @include breakpoint(large-desktop) {
     background-color: var(--text);
