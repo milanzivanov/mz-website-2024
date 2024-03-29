@@ -103,7 +103,7 @@ function scrollToTop() {
 document
   .querySelector(".nav-desktop__list")
   .addEventListener("click", function (e) {
-    e.preventDefault();
+    // e.preventDefault();
 
     // Matching strategy
     if (e.target.classList.contains("nav-desktop__link")) {
