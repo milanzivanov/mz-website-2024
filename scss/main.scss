@@ -30,7 +30,6 @@
   width: 100%;
   background: url("/img/it-wire.svg") repeat;
   background-color: var(--bg2);
-  // box-shadow: 0px 0px 1px 1px var(--logo-color);
 
   @include breakpoint(large-desktop) {
     background-color: var(--text);
