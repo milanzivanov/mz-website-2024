@@ -70,13 +70,13 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   background-color: $white;
   box-shadow: 0 2px 10px rgba(45, 45, 45, 0.1);
 
   @include breakpoint(large-desktop) {
-    flex-direction: row;
+    flex-direction: row-reverse;
     margin: 0;
     border-radius: 5px;
     overflow: hidden;
@@ -94,6 +94,10 @@
 
 .about-container__box--left {
   background-color: var(--text);
+
+  @include breakpoint(desktop) {
+    background-color: var(--white);
+  }
 }
 
 //////////////////
