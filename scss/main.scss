@@ -28,11 +28,39 @@
   display: flex;
   position: relative;
   width: 100%;
+  overflow: hidden;
   background: url("/img/it-wire.svg") repeat;
   background-color: var(--bg2);
+  transition: all ease-in-out;
+
+  background-size: contain;
+  // Do I need this animation???
+  // -webkit-animation: slidein 200s;
+  // animation: slidein 200s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
 
   @include breakpoint(large-desktop) {
     background-color: var(--text);
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: top;
+    background-size: contain;
+  }
+  to {
+    background-position: bottom 0px;
+    // background-position: -100px 0px;
+    background-size: contain;
   }
 }
 
