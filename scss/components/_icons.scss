@@ -20,4 +20,8 @@
 
 .svg-logo {
   fill: var(--logo-color);
+
+  @include breakpoint(desktop) {
+    fill: var(--logo-color--inverse);
+  }
 }

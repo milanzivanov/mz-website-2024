@@ -1,58 +1,42 @@
 /////////////////////
 /// dark light mode
 
-$text-color-light: #241c3b;
-$bg-color-light-1: #c5cad4;
-$bg-color-light-2: #c1c7d3;
-$logo-color-light: #1b0b51;
-
-$text-color-dark: #d0ddf1;
-$bg-color-dark-1: #22232a;
-$bg-color-dark-2: #25262b;
-$logo-color-dark: #1971c2;
-
 :root {
-  --text-color-light: #{$text-color-light};
-  --bg-color-light-1: #{$bg-color-light-1};
-  --bg-color-light-2: #{$bg-color-light-2};
-  --bg-color-light-2-opacity-90: rgb(193, 199, 211, 0.85);
-  --logo-light: #{$logo-color-light};
+  --text-color-light: #241c3b;
+  --bg-color-light-1: #c5cad4;
+  --bg-color-light-2: #c1c7d3;
+  --logo-color-light: #1b0b51;
+  --logo-color-light--inverse: #1971c2;
 
-  --text-color-dark: #{$text-color-dark};
-  --bg-color-dark-1: #{$bg-color-dark-1};
-  --bg-color-dark-2: #{$bg-color-dark-2};
-  --bg-color-dark-2-opacity-90: rgb(37, 38, 43, 0.98);
-  --logo-dark: #{$logo-color-dark};
+  --text-color-dark: #d0ddf1;
+  --bg-color-dark-1: #22232a;
+  --bg-color-dark-2: #25262b;
+  --logo-color-dark: #1971c2;
+  --logo-color-dark--inverse: #1b0b51;
 
   --gradient-color: linear-gradient(90deg, #4ca5ff, #6366f1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg1: #{$bg-color-dark-1};
-    --bg2: #{$bg-color-dark-2};
-    --bg-90: var(--bg-color-dark-2-opacity-90);
-    --text: #{$text-color-dark};
-    --logo-color: #{$logo-color-dark};
-  }
-}
-
 @media (prefers-color-scheme: light) {
   :root {
-    --bg1: #{$bg-color-light-1};
-    --bg2: #{$bg-color-light-2};
+    --bg1: var(--bg-color-light-1);
+    --bg2: var(--bg-color-light-2);
     --bg-90: var(--bg-color-light-2-opacity-90);
-    --text: #{$text-color-light};
-    --logo-color: #{$logo-color-light};
+    --text: var(--text-color-light);
+    --logo-color: var(--logo-color-light);
+    --logo-color--inverse: var(--logo-color-light--inverse);
   }
 }
 
-[color-scheme="dark"] {
-  --bg1: var(--bg-color-dark-1);
-  --bg2: var(--bg-color-dark-2);
-  --bg-90: var(--bg-color-dark-2-opacity-90);
-  --text: var(--text-color-dark);
-  --logo-color: var(--logo-dark);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg1: var(--bg-color-dark-1);
+    --bg2: var(--bg-color-dark-2);
+    --bg-90: var(--bg-color-dark-2-opacity-90);
+    --text: var(--text-color-dark);
+    --logo-color: var(--logo-color-dark);
+    --logo-color--inverse: var(--logo-color-dark--inverse);
+  }
 }
 
 [color-scheme="light"] {
@@ -60,7 +44,17 @@ $logo-color-dark: #1971c2;
   --bg2: var(--bg-color-light-2);
   --bg-90: var(--bg-color-light-2-opacity-90);
   --text: var(--text-color-light);
-  --logo-color: var(--logo-light);
+  --logo-color: var(--logo-color-light);
+  --logo-color--inverse: var(--logo-color-light--inverse);
+}
+
+[color-scheme="dark"] {
+  --bg1: var(--bg-color-dark-1);
+  --bg2: var(--bg-color-dark-2);
+  --bg-90: var(--bg-color-dark-2-opacity-90);
+  --text: var(--text-color-dark);
+  --logo-color: var(--logo-color-dark);
+  --logo-color--inverse: var(--logo-color-dark--inverse);
 }
 
 .theme {
@@ -74,6 +68,10 @@ $logo-color-dark: #1971c2;
   place-items: center;
   position: relative;
   z-index: 10;
+
+  @include breakpoint(desktop) {
+    border: 3px solid var(--logo-color--inverse);
+  }
 }
 
 .theme:is(:hover, :focus) {
