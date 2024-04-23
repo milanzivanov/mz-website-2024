@@ -61,7 +61,8 @@
   padding: 0 1rem 1rem 1rem;
   width: 100%;
 
-  color: var(--text);
+  // color: var(--text);
+  color: var(--logo-color);
 
   @include breakpoint(large-desktop) {
     background: var(--gradient-color);
@@ -83,22 +84,24 @@
 }
 
 .h3-primary-title {
+  position: relative;
   font-family: $font-primary;
   font-weight: 600;
   font-size: 1.3rem;
   width: 100%;
   color: var(--logo-color);
+}
 
-  @include breakpoint(large-desktop) {
-    background: var(--gradient-color);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    font-size: 1.5rem;
-  }
+.h3-primary-title::before {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  width: 80%;
+  height: 2px;
+  background-color: var(--logo-color);
 
-  @include breakpoint(extra-large-desktop) {
-    font-size: 1.7rem;
+  @include breakpoint(desktop) {
+    width: 50%;
   }
 }
 

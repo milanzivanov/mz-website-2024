@@ -34,12 +34,13 @@
 .btn:hover,
 .btn:active {
   transform: translateY(-3px);
-  color: var(--logo-color);
+  color: #d0ddf1;
+  background-color: var(--logo-color--inverse);
 }
 
 .btn--theme {
-  background-color: #d0ddf1;
-  color: #0a2c4d;
+  color: #fff;
+  background-color: var(--logo-color);
 }
 
 .btn--size {

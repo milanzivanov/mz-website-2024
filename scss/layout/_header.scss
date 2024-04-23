@@ -24,12 +24,11 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 1rem 0;
-
   background-color: var(--bg2);
   padding: 1rem;
 
   @include breakpoint(desktop) {
+    padding: 0.5rem;
     background-color: var(--text);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -37,8 +36,8 @@
 }
 
 .header__logo {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   z-index: 10;
 
   @include breakpoint(desktop) {
@@ -160,23 +159,6 @@
     left: 0;
   }
 }
-
-// active hamburger state
-// .nav-toggle-btn.active > span {
-//   height: 0;
-//   &:after,
-//   &:before {
-//     width: 34px;
-//     top: 0px;
-//     left: 0;
-//   }
-//   &:after {
-//     transform: rotate(-45deg);
-//   }
-//   &:before {
-//     transform: rotate(45deg);
-//   }
-// }
 
 // beckdrop
 .nav-backdrop-container {
