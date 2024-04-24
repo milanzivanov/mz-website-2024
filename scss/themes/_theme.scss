@@ -7,12 +7,14 @@
   --bg-color-light-2: #c1c7d3;
   --logo-color-light: #1b0b51;
   --logo-color-light--inverse: #1971c2;
+  --box-shadow-color-light: rgba(45, 45, 45, 0.1);
 
   --text-color-dark: #d0ddf1;
   --bg-color-dark-1: #22232a;
   --bg-color-dark-2: #25262b;
   --logo-color-dark: #1971c2;
   --logo-color-dark--inverse: #1b0b51;
+  --box-shadow-color-dark: rgba(208, 221, 241, 0.2);
 
   --gradient-color: linear-gradient(90deg, #4ca5ff, #6366f1);
 }
@@ -21,10 +23,10 @@
   :root {
     --bg1: var(--bg-color-light-1);
     --bg2: var(--bg-color-light-2);
-    --bg-90: var(--bg-color-light-2-opacity-90);
     --text: var(--text-color-light);
     --logo-color: var(--logo-color-light);
     --logo-color--inverse: var(--logo-color-light--inverse);
+    --box-shadow-color: var(--box-shadow-color-light);
   }
 }
 
@@ -32,10 +34,10 @@
   :root {
     --bg1: var(--bg-color-dark-1);
     --bg2: var(--bg-color-dark-2);
-    --bg-90: var(--bg-color-dark-2-opacity-90);
     --text: var(--text-color-dark);
     --logo-color: var(--logo-color-dark);
     --logo-color--inverse: var(--logo-color-dark--inverse);
+    --box-shadow-color: var(--box-shadow-color-dark);
   }
 }
 
@@ -46,6 +48,7 @@
   --text: var(--text-color-light);
   --logo-color: var(--logo-color-light);
   --logo-color--inverse: var(--logo-color-light--inverse);
+  --box-shadow-color: var(--box-shadow-color-light);
 }
 
 [color-scheme="dark"] {
@@ -55,6 +58,7 @@
   --text: var(--text-color-dark);
   --logo-color: var(--logo-color-dark);
   --logo-color--inverse: var(--logo-color-dark--inverse);
+  --box-shadow-color: var(--box-shadow-color-dark);
 }
 
 .theme {
