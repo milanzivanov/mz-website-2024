@@ -309,7 +309,7 @@ function populateWorks(data) {
     btnTextRow.href = work.linkSrc;
     btnTextRow.target = "_blank";
     btnTextRow.rel = "dns-prefetch";
-    btnTextRow.textContent = "View It Here";
+    btnTextRow.textContent = "View It Here 🚀";
     textContainer.appendChild(btnTextRow);
 
     section.appendChild(containerProjects);
