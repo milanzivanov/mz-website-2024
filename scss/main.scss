@@ -138,6 +138,7 @@
   padding: 1rem 0.5rem;
   align-items: center;
   font-size: 2rem;
+  cursor: not-allowed;
 
   @include breakpoint(tablet) {
     flex: 1 1 25%;

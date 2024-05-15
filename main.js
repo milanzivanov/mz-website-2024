@@ -166,7 +166,7 @@ const handleHover = function (e, opacity) {
   }
 };
 // desktop nav
-nav.addEventListener("mouseover", handleHover.bind(0.5));
+nav.addEventListener("mouseover", handleHover.bind(0.3));
 nav.addEventListener("mouseout", handleHover.bind(1));
 
 //////////////////////////
