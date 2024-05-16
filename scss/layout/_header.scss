@@ -36,12 +36,14 @@
 }
 
 .header__logo {
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
   z-index: 10;
 
   @include breakpoint(desktop) {
     margin-left: 0;
+    height: 50px;
+    width: 50px;
   }
 
   a {
@@ -104,13 +106,12 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border: none;
   padding: 0;
-  background-color: $white;
+  background-color: transparent;
   text-align: center;
-  border-radius: 5px;
 
   @include breakpoint(desktop) {
     width: 70px;
@@ -122,9 +123,8 @@
     display: inline-block;
     position: relative;
     height: 3px;
-    width: 34px;
-    border-radius: 1px;
-    background: $default-black-color;
+    width: 36px;
+    background: var(--text);
     vertical-align: middle;
 
     &:before,
@@ -133,19 +133,18 @@
       position: absolute;
       content: "";
       height: 3px;
-      border-radius: 1px;
-      background: $default-black-color;
+      background: var(--text);
       transition: all 200ms;
+      width: 36px;
     }
     &:before {
       top: -11px;
       left: 0;
-      width: 34px;
     }
     &:after {
       top: 11px;
-      left: 0;
-      width: 34px;
+      right: 0;
+      width: 20px;
     }
   }
 
