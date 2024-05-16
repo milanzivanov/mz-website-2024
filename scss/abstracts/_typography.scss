@@ -60,11 +60,11 @@
   font-weight: 800;
   padding: 0 1rem 1rem 1rem;
   width: 100%;
-
-  color: var(--logo-color);
   color: var(--text);
+  letter-spacing: 0.5px;
 
   @include breakpoint(large-desktop) {
+    letter-spacing: 2px;
     padding: 0 0 1rem 0;
     font-size: 1.3rem;
   }
@@ -76,7 +76,6 @@
 
 .h2-primary-title--about {
   position: relative;
-  letter-spacing: 0.5px;
 }
 
 .h3-primary-title {
@@ -87,6 +86,10 @@
   width: 100%;
   color: var(--logo-color);
   padding-bottom: 0.2rem;
+
+  @include breakpoint(large-desktop) {
+    font-weight: 700;
+  }
 }
 
 .h3-primary-title::before {
