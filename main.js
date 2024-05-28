@@ -201,160 +201,162 @@ sliders.forEach((slider) => {
 /////////////////////
 // json file with my fe works
 async function populate() {
-  const requestURL = "https://milanzivanov.github.io/Data/works.json";
-  const request = new Request(requestURL);
+  const response = await fetch(
+    "https://milanzivanov.github.io/Data/works.json"
+  );
+  const data = await response.json();
 
-  const res = await fetch(request);
-  const data = await res.json();
-
-  populateSkills(data);
-  populateWorks(data);
+  populateSkills(data.skills);
+  populateWorks(data.works);
 }
 
-///////////////////////
-// skills data
-function populateSkills(data) {
-  const containerSkills = document.querySelector(".skills-container-icons");
-  const skills = data.skills;
-
-  let output = "";
-
-  for (const skill of skills) {
-    output += `
-      <div class="skill-icon border-radius">
-        <i 
-          class="${skill.iconClass}">
-        </i>
-        <p>${skill.iconTitle}</p>
-      </div>
-    `;
-  }
-
-  containerSkills.innerHTML = output;
+function populateSkills(skills) {
+  const container = document.querySelector(".skills-container-icons");
+  container.innerHTML = skills
+    .map(
+      (skill) => `
+    <div class="skill-icon border-radius">
+      <i class="${skill.iconClass}"></i>
+      <p>${skill.iconTitle}</p>
+    </div>
+  `
+    )
+    .join("");
 }
 
-// works data
-function populateWorks(data) {
+function populateWorks(works) {
   const section = document.querySelector(".projects__content");
-  const works = data.works;
 
-  for (const work of works) {
-    const containerProjects = document.createElement("div");
-    containerProjects.className = "project__container";
+  section.innerHTML = works
+    .map(
+      (work) => `
 
-    const projectItem = document.createElement("div");
-    projectItem.classList.add(
-      "project__item",
-      "project__item--img",
-      "project__item--bg-left"
-    );
-    containerProjects.appendChild(projectItem);
+    <div class="project__container">
+      <div class="project-image project-details-btn">
+        <img data-src="${work.src}" src="${work.src}" alt="${work.title}">
+      </div>
+      <div class="project__item">
+        <div class="project__text-container">
+          <h3 class="h3-primary-title project-container--title">${
+            work.title
+          }</h3>
+          <div class="project__text-container--description">
+            <p class="paragraph-text paragraph-text--project paragraph-text--border-bottom">${
+              work.body
+            }</p>
+            <p class="paragraph-text">${work.projectTime}</p>
+            <div class="skill-container border-radius">
+              <p class="paragraph-strong">Skill used:</p>
+              <ul class="list-icon-container">
+                ${work.technologiesUsed
+                  .map(
+                    (skill) =>
+                      `<li><i class="${skill.svgIcon} devicon"></i></li>`
+                  )
+                  .join("")}
+              </ul>
+            </div>
+          </div>
+          <a href="${
+            work.linkSrc
+          }" target="_blank" rel="dns-prefetch" class="btn btn--size btn--theme border-radius">View It Here 🚀</a>
+        </div>
+      </div>
+    </div>
+  `
+    )
+    .join("");
 
-    const projectAnchorLink = document.createElement("a");
-    projectAnchorLink.href = work.linkSrc;
-    projectAnchorLink.rel = "dns-prefetch";
-    projectAnchorLink.target = "_blank";
+  // Modal
+  const detailsButtons = document.querySelectorAll(".project-details-btn");
 
-    const imgProject = document.createElement("img");
-    imgProject.setAttribute("data-src", work.src);
-    imgProject.setAttribute("alt", work.title);
+  detailsButtons.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      const title = works[index].title;
+      const description = works[index].body;
+      const image = works[index].src;
+      const link = works[index].linkSrc;
+      const time = works[index].projectTime;
+      const technologies = works[index].technologiesUsed;
 
-    //
-    const projectRowText = document.createElement("div");
-    projectRowText.className = "project__item";
-    containerProjects.appendChild(projectRowText);
-
-    const textContainer = document.createElement("div");
-    textContainer.classList.add("project__text-container");
-    projectRowText.appendChild(textContainer);
-
-    const h3TitleRowText = document.createElement("h3");
-    h3TitleRowText.className = "h3-primary-title project-container--title";
-    h3TitleRowText.textContent = work.title;
-    textContainer.appendChild(h3TitleRowText);
-
-    const rowTextDiv = document.createElement("div");
-    rowTextDiv.classList.add("project__text-container--description");
-    textContainer.appendChild(rowTextDiv);
-
-    const rowTextParagraph = document.createElement("p");
-    rowTextParagraph.className =
-      "paragraph-text paragraph-text--project paragraph-text--border-bottom";
-    rowTextParagraph.textContent = work.body;
-    rowTextDiv.appendChild(rowTextParagraph);
-
-    const rowTextTime = document.createElement("p");
-    rowTextTime.className = "paragraph-text paragraph-text--project";
-    rowTextTime.textContent = work.projectTime;
-    rowTextDiv.appendChild(rowTextTime);
-
-    const skillContainer = document.createElement("div");
-    skillContainer.className = "skill-container border-radius";
-    rowTextDiv.appendChild(skillContainer);
-
-    const rowTextStrong = document.createElement("p");
-    rowTextStrong.classList.add("paragraph-strong");
-    rowTextStrong.textContent = "Skill used:";
-    skillContainer.appendChild(rowTextStrong);
-
-    const skillList = document.createElement("ul");
-    skillList.classList.add("list-icon-container");
-    skillContainer.appendChild(skillList);
-
-    projectItem.appendChild(projectAnchorLink);
-    projectAnchorLink.appendChild(imgProject);
-
-    const btnTextRow = document.createElement("a");
-    btnTextRow.className = "btn btn--size btn--theme border-radius";
-    btnTextRow.href = work.linkSrc;
-    btnTextRow.target = "_blank";
-    btnTextRow.rel = "dns-prefetch";
-    btnTextRow.textContent = "View It Here 🚀";
-    textContainer.appendChild(btnTextRow);
-
-    section.appendChild(containerProjects);
-
-    // work skill
-    const skillsUsed = work.technologiesUsed;
-    for (const skill of skillsUsed) {
-      const listItem = document.createElement("li");
-      const listIcon = document.createElement("i");
-      listIcon.className = skill.svgIcon + " devicon";
-      skillList.appendChild(listItem);
-      listItem.appendChild(listIcon);
-    }
-  }
-
-  ///////////////////////
-  // lazy loading with intersectionObserver
-  const images = document.querySelectorAll("img[data-src]");
-
-  function preloadImage(img) {
-    const src = img.getAttribute("data-src");
-    if (!src) {
-      return;
-    }
-    img.src = src;
-  }
-  const imgOptions = {
-    threshold: 0,
-    rootMargin: "0px 0px 200px 0px"
-  };
-  const imgObserver = new IntersectionObserver((entries, imgObserver) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        preloadImage(entry.target);
-        imgObserver.unobserve(entry.target);
-      }
+      showDetailsModal(title, description, image, link, time, technologies);
     });
-  }, imgOptions);
+  });
 
-  images.forEach((image) => {
-    imgObserver.observe(image);
+  const modal = document.getElementById("projectDetailsModal");
+
+  function showDetailsModal(
+    title,
+    description,
+    image,
+    link,
+    time,
+    technologies
+  ) {
+    const modalTitle = document.querySelector(".modal--title");
+    const modalBody = document.querySelector(".modal--text");
+    const modalImage = document.querySelector(".madal--image");
+    const modalTime = document.querySelector(".modal--time");
+    const modalLink = document.querySelector(".modal-btn--link");
+    const technologyList = document.querySelector(".list-icon-container");
+
+    modalTitle.textContent = title;
+    modalBody.textContent = description;
+    modalImage.src = image;
+    modalTime.textContent = time;
+    modalLink.href = link;
+
+    function buildTechnologyList(technologies) {
+      let technologyListHTML = "";
+
+      for (const technology of technologies) {
+        technologyListHTML += `<li><i class="${technology.svgIcon} devicon"></i></li>`;
+      }
+
+      return technologyListHTML;
+    }
+
+    const technologyListHTML = buildTechnologyList(technologies);
+    technologyList.innerHTML = technologyListHTML;
+
+    modal.classList.add("show");
+  }
+
+  const closeModal = document.querySelector(".modal--close");
+  closeModal.addEventListener("click", function closeModal() {
+    modal.classList.remove("show");
   });
 }
+
+//
+const images = document.querySelectorAll("img[data-src]");
+
+function preloadImage(img) {
+  const src = img.getAttribute("data-src");
+  if (!src) {
+    return;
+  }
+  img.src = src;
+}
+
+const imgOptions = {
+  threshold: 0,
+  rootMargin: "0px 0px 200px 0px"
+};
+
+const imgObserver = new IntersectionObserver((entries, imgObserver) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      return;
+    }
+    preloadImage(entry.target);
+    imgObserver.unobserve(entry.target);
+  });
+}, imgOptions);
+
+images.forEach((image) => {
+  imgObserver.observe(image);
+});
 
 populate();
 

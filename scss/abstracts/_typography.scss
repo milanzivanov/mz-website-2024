@@ -102,7 +102,7 @@
   background-color: var(--logo-color);
 
   @include breakpoint(desktop) {
-    width: 50%;
+    width: 70%;
   }
 }
 
@@ -132,7 +132,10 @@
   height: 3px;
   background-color: var(--logo-color);
   bottom: 0;
-  left: 0;
+  left: 1rem;
+  @include breakpoint(desktop) {
+    left: 0;
+  }
 }
 
 // paragraphs
@@ -156,10 +159,6 @@
 .paragraph-text--about {
   box-shadow: 1px 1px 1px #d6e2ed;
   box-shadow: none;
-}
-
-.paragraph-text--project {
-  margin: 0;
 }
 
 .paragraph-text--border-bottom {

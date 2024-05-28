@@ -1,7 +1,6 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
-// buttons
 .btn {
   display: inline-block;
   width: 100%;
@@ -14,12 +13,13 @@
   outline: none;
   border: 0;
   cursor: pointer;
+  border-radius: 5px;
 
   @include breakpoint(tablet) {
     width: 30%;
   }
   @include breakpoint(large-desktop) {
-    width: 45%;
+    width: 41%;
   }
 }
 
