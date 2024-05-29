@@ -277,6 +277,7 @@ function populateWorks(works) {
       const image = works[index].src;
       const link = works[index].linkSrc;
       const time = works[index].projectTime;
+
       const technologies = works[index].technologiesUsed;
 
       showDetailsModal(title, description, image, link, time, technologies);
@@ -298,13 +299,17 @@ function populateWorks(works) {
     const modalImage = document.querySelector(".madal--image");
     const modalTime = document.querySelector(".modal--time");
     const modalLink = document.querySelector(".modal-btn--link");
-    const technologyList = document.querySelector(".list-icon-container");
+    const technologyList = document.querySelector(".list-icon-container-id");
 
     modalTitle.textContent = title;
     modalBody.textContent = description;
     modalImage.src = image;
     modalTime.textContent = time;
-    modalLink.href = link;
+
+    modalLink.addEventListener("click", function closeModal() {
+      modalLink.href = link;
+      modal.classList.remove("show");
+    });
 
     function buildTechnologyList(technologies) {
       let technologyListHTML = "";
@@ -312,6 +317,8 @@ function populateWorks(works) {
       for (const technology of technologies) {
         technologyListHTML += `<li><i class="${technology.svgIcon} devicon"></i></li>`;
       }
+
+      console.log(technologyListHTML);
 
       return technologyListHTML;
     }

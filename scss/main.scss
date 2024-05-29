@@ -120,7 +120,6 @@
     margin: auto;
   }
   @include breakpoint(large-desktop) {
-    // background-color: var(--text);
     width: 100%;
     border-radius: 5px;
     overflow: hidden;
@@ -221,7 +220,6 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  // align-items: flex-end;
   padding: 1rem;
 }
 
@@ -242,16 +240,20 @@
 .paragraph-strong {
   font-weight: 500;
   color: $default-black-color;
-  padding-bottom: 0.5rem;
 }
 
-.list-icon-container {
+.list-icon-container,
+.list-icon-container-id {
   display: flex;
   flex-wrap: wrap;
 
   li {
     padding: 0.3rem 0.3rem 0.3rem 0;
   }
+}
+
+.skill-container--br {
+  border-radius: 5px;
 }
 
 .devicon {
@@ -270,7 +272,7 @@
 
 .modal-container {
   position: absolute;
-  z-index: 21;
+  z-index: 19;
   background: var(--text);
   inset: 0 0 0 0;
   display: none;
@@ -319,6 +321,7 @@
   background: transparent;
   outline: none;
   border: none;
+  color: $default-black-color;
 }
 
 /////////////////////
