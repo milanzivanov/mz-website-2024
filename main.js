@@ -299,7 +299,7 @@ function populateWorks(works) {
     const modalImage = document.querySelector(".madal--image");
     const modalTime = document.querySelector(".modal--time");
     const modalLink = document.querySelector(".modal-btn--link");
-    const technologyList = document.querySelector(".list-icon-container-id");
+    const technologyList = document.querySelector(".skill-modal-container");
 
     modalTitle.textContent = title;
     modalBody.textContent = description;
@@ -317,8 +317,6 @@ function populateWorks(works) {
       for (const technology of technologies) {
         technologyListHTML += `<li><i class="${technology.svgIcon} devicon"></i></li>`;
       }
-
-      console.log(technologyListHTML);
 
       return technologyListHTML;
     }
