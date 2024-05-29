@@ -277,7 +277,6 @@ function populateWorks(works) {
       const image = works[index].src;
       const link = works[index].linkSrc;
       const time = works[index].projectTime;
-
       const technologies = works[index].technologiesUsed;
 
       showDetailsModal(title, description, image, link, time, technologies);
@@ -298,7 +297,7 @@ function populateWorks(works) {
     const modalBody = document.querySelector(".modal--text");
     const modalImage = document.querySelector(".madal--image");
     const modalTime = document.querySelector(".modal--time");
-    const modalLink = document.querySelector(".modal-btn--link");
+    const modalLinkElement = document.querySelector(".modal-btn--link");
     const technologyList = document.querySelector(".skill-modal-container");
 
     modalTitle.textContent = title;
@@ -306,8 +305,8 @@ function populateWorks(works) {
     modalImage.src = image;
     modalTime.textContent = time;
 
-    modalLink.addEventListener("click", function closeModal() {
-      modalLink.href = link;
+    modalLinkElement.addEventListener("click", function closeModal() {
+      modalLinkElement.href = link;
       modal.classList.remove("show");
     });
 
