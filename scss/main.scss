@@ -202,6 +202,13 @@
   z-index: 19;
   background-color: var(--text);
   cursor: pointer;
+  transition-duration: 0.15s;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-image:hover {
+  opacity: 0.85;
 }
 
 .project__item {
