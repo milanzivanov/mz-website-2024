@@ -201,13 +201,16 @@ sliders.forEach((slider) => {
 /////////////////////
 // json file with my fe works
 async function populate() {
-  const response = await fetch(
-    "https://milanzivanov.github.io/Data/works.json"
-  );
-  const data = await response.json();
-
-  populateSkills(data.skills);
-  populateWorks(data.works);
+  try {
+    const response = await fetch(
+      "https://milanzivanov.github.io/Data/works.json"
+    );
+    const data = await response.json();
+    populateSkills(data.skills);
+    populateWorks(data.works);
+  } catch (error) {
+    console.error("Error fetching data: ", error);
+  }
 }
 
 function populateSkills(skills) {
