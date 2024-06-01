@@ -206,8 +206,9 @@ async function populate() {
       "https://milanzivanov.github.io/Data/works.json"
     );
     const data = await response.json();
-    populateSkills(data.skills);
-    populateWorks(data.works);
+    const { skills, works } = data;
+    populateSkills(skills);
+    populateWorks(works);
   } catch (error) {
     console.error("Error fetching data: ", error);
   }

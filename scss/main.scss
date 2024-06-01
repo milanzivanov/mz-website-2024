@@ -195,6 +195,7 @@
 
 .container-position {
   position: relative;
+  overflow: hidden;
 }
 
 .project-image {
@@ -282,13 +283,14 @@
   z-index: 19;
   background: var(--text);
   inset: 0 0 0 0;
-  display: none;
+  transform: translateX(-100%);
+  transition: ease-in-out 0.3s;
   border-radius: 5px;
-  overflow: hidden;
 }
 
 .show {
   display: flex;
+  transform: translateX(0);
 }
 
 .modal-content {
