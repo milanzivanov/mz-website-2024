@@ -76,6 +76,7 @@
   flex-direction: column;
   background-color: $white;
   box-shadow: 0 2px 10px rgba(45, 45, 45, 0.1);
+  border-radius: 0;
 
   @include breakpoint(large-desktop) {
     flex-direction: row-reverse;
@@ -91,15 +92,22 @@
 
 .about-container__box {
   position: relative;
-  flex: 1;
+  // flex: 1;
 }
 
 .about-container__box--left {
   background-color: var(--text);
+  display: flex;
 
   @include breakpoint(desktop) {
     background-color: var(--white);
+    padding: 1rem;
   }
+}
+
+.about-container__box--img {
+  background-color: var(--text);
+  border-radius: 5px;
 }
 
 //////////////////
