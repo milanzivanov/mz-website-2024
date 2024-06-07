@@ -92,7 +92,6 @@
 
 .about-container__box {
   position: relative;
-  // flex: 1;
 }
 
 .about-container__box--left {
@@ -106,8 +105,12 @@
 }
 
 .about-container__box--img {
-  background-color: var(--bg1);
-  border-radius: 5px;
+  background-color: transparent;
+
+  @include breakpoint(large-desktop) {
+    background-color: var(--bg1);
+    border-radius: 5px;
+  }
 }
 
 //////////////////
