@@ -30,12 +30,21 @@
   font-weight: 800;
   color: var(--logo-color);
 
-  @include breakpoint(large-desktop) {
-    background: var(--gradient-color);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: gradient 10s ease infinite;
+  // version 2
+  text-wrap: balance;
+  mask: url("../../img/grunge.png");
+  word-break: break-word;
+
+  @include breakpoint(desktop) {
+    // version 1
+    // background: var(--gradient-color);
+    // -webkit-text-fill-color: transparent;
+    // -webkit-background-clip: text;
+    // background-clip: text;
+    // animation: gradient 10s ease infinite;
+
+    // verson 2
+    color: var(--logo-color--inverse);
   }
 }
 

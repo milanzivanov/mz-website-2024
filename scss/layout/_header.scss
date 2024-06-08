@@ -30,8 +30,8 @@
   @include breakpoint(desktop) {
     padding: 0.5rem;
     background-color: var(--text);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: $default-border-radius;
+    border-bottom-right-radius: $default-border-radius;
   }
 }
 

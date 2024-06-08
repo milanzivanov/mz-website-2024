@@ -12,7 +12,7 @@
 /// main
 .container {
   position: relative;
-  overflow: hidden;
+  overflow: clip;
   animation: none;
   height: 100vh;
 }
@@ -81,7 +81,7 @@
   @include breakpoint(large-desktop) {
     flex-direction: row-reverse;
     margin: 0;
-    border-radius: 5px;
+    border-radius: $default-border-radius;
     overflow: hidden;
   }
 }
@@ -106,11 +106,16 @@
 
 .about-container__box--img {
   background-color: transparent;
+  transition: ease-in-out 0.3s;
 
   @include breakpoint(large-desktop) {
     background-color: var(--bg1);
-    border-radius: 5px;
+    border-radius: $default-border-radius;
   }
+}
+
+.about-container__box--img:hover {
+  opacity: 0.85;
 }
 
 //////////////////
@@ -132,7 +137,7 @@
   }
   @include breakpoint(large-desktop) {
     width: 100%;
-    border-radius: 5px;
+    border-radius: $default-border-radius;
     overflow: hidden;
     margin: auto;
   }
@@ -197,7 +202,7 @@
   @include breakpoint(large-desktop) {
     flex-direction: row;
     position: relative;
-    border-radius: 5px;
+    border-radius: $default-border-radius;
     overflow: hidden;
     flex: 1 1 32%;
     margin-bottom: 0;
@@ -272,7 +277,7 @@
 }
 
 .skill-container--br {
-  border-radius: 5px;
+  border-radius: $default-border-radius;
 }
 
 .devicon {
@@ -296,7 +301,7 @@
   inset: 0 0 0 0;
   transform: translateX(-100%);
   transition: ease-in-out 0.3s;
-  border-radius: 5px;
+  border-radius: $default-border-radius;
 }
 
 .show {
@@ -386,7 +391,7 @@
   right: 15px;
   margin: 5px;
   z-index: 20;
-  border-radius: 5px;
+  border-radius: $default-border-radius;
   transition: all 0.3s ease-in-out;
 
   @include breakpoint(large-desktop) {
