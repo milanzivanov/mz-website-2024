@@ -36,8 +36,16 @@ img,
 picture,
 svg,
 video {
-  display: block;
+  font-style: italic;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  shape-margin: 1rem;
+
   max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 
 /* Improved heading in supported browsers */
