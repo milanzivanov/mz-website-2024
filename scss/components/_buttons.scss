@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 .btn {
   display: inline-block;
-  width: 100%;
+  width: 80%;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -19,7 +19,8 @@
     width: 30%;
   }
   @include breakpoint(large-desktop) {
-    width: 41%;
+    text-align: left;
+    width: 40%;
   }
 }
 

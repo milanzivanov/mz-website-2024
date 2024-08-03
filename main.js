@@ -1,5 +1,27 @@
 import "./scss/main.scss";
 
+// import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+
+const swiper = new Swiper(".swiper-container", {
+  slidesPerView: 1,
+  autoHeight: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  scrollbar: {
+    el: ".swiper-scrollbar",
+    draggable: true
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  breakpoints: {
+    769: {}
+  }
+});
+
 // static audio url
 import audioLightOnUrl from "./audio/light-on.mp3";
 import audioLightOffUrl from "./audio/light-off.mp3";
@@ -229,111 +251,49 @@ function populateSkills(skills) {
 }
 
 function populateWorks(works) {
-  const section = document.querySelector(".projects__content");
+  // const section = document.querySelector(".projects__content");
+  const section = document.querySelector(".swiper-wrapper");
 
   section.innerHTML = works
     .map(
       (work) => `
-
-    <div class="project__container">
-      <div class="project-image project-details-btn">
-        <img data-src="${work.src}" src="${work.src}" alt="${work.title}">
-      </div>
-      <div class="project__item">
-        <div class="project__text-container">
-          <h3 class="h3-primary-title project-container--title">${
-            work.title
-          }</h3>
-          <div class="project__text-container--description">
-            <p class="paragraph-text paragraph-text--project paragraph-text--border-bottom">${
-              work.body
-            }</p>
-            <p class="paragraph-text">${work.projectTime}</p>
-            <div class="skill-container border-radius">
-              <p class="paragraph-strong">Skill used:</p>
-              <ul class="list-icon-container">
-                ${work.technologiesUsed
-                  .map(
-                    (skill) =>
-                      `<li><i class="${skill.svgIcon} devicon"></i></li>`
-                  )
-                  .join("")}
-              </ul>
+      <div class="swiper-slide">
+        <div class="project__container">
+          <div class="project-image project-details-btn">
+            <img data-src="${work.src}" src="${work.src}" alt="${work.title}">
+          </div>
+          <div class="project__item">
+            <div class="project__text-container">
+              <h3 class="h3-primary-title project-container--title">${
+                work.title
+              }</h3>
+              <div class="project__text-container--description">
+                <p class="paragraph-text paragraph-text--project paragraph-text--border-bottom">${
+                  work.body
+                }</p>
+                <p class="paragraph-text">${work.projectTime}</p>
+                <div class="skill-container border-radius">
+                  <p class="paragraph-strong">Skill used:</p>
+                  <ul class="list-icon-container">
+                    ${work.technologiesUsed
+                      .map(
+                        (skill) =>
+                          `<li><i class="${skill.svgIcon} devicon"></i></li>`
+                      )
+                      .join("")}
+                  </ul>
+                </div>
+              </div>
+              <a href="${
+                work.linkSrc
+              }" target="_blank" rel="dns-prefetch" class="btn btn--size btn--theme border-radius">View It Here 🚀</a>
             </div>
           </div>
-          <a href="${
-            work.linkSrc
-          }" target="_blank" rel="dns-prefetch" class="btn btn--size btn--theme border-radius">View It Here 🚀</a>
         </div>
       </div>
-    </div>
-  `
+    `
     )
     .join("");
-
-  // Modal
-  const detailsButtons = document.querySelectorAll(".project-details-btn");
-
-  detailsButtons.forEach((item, index) => {
-    item.addEventListener("click", () => {
-      const title = works[index].title;
-      const description = works[index].body;
-      const image = works[index].src;
-      const link = works[index].linkSrc;
-      const time = works[index].projectTime;
-      const technologies = works[index].technologiesUsed;
-
-      showDetailsModal(title, description, image, link, time, technologies);
-    });
-  });
-
-  const modal = document.getElementById("projectDetailsModal");
-
-  function showDetailsModal(
-    title,
-    description,
-    image,
-    link,
-    time,
-    technologies
-  ) {
-    const modalTitle = document.querySelector(".modal--title");
-    const modalBody = document.querySelector(".modal--text");
-    const modalImage = document.querySelector(".madal--image");
-    const modalTime = document.querySelector(".modal--time");
-    const modalLinkElement = document.querySelector(".modal-btn--link");
-    const technologyList = document.querySelector(".skill-modal-container");
-
-    modalTitle.textContent = title;
-    modalBody.textContent = description;
-    modalImage.src = image;
-    modalTime.textContent = time;
-
-    modalLinkElement.addEventListener("click", function closeModal() {
-      modalLinkElement.href = link;
-      modal.classList.remove("show");
-    });
-
-    function buildTechnologyList(technologies) {
-      let technologyListHTML = "";
-
-      for (const technology of technologies) {
-        technologyListHTML += `<li><i class="${technology.svgIcon} devicon"></i></li>`;
-      }
-
-      return technologyListHTML;
-    }
-
-    const technologyListHTML = buildTechnologyList(technologies);
-    technologyList.innerHTML = technologyListHTML;
-
-    modal.classList.add("show");
-  }
-
-  const closeModal = document.querySelector(".modal--close");
-  closeModal.addEventListener("click", function closeModal() {
-    modal.classList.remove("show");
-  });
 }
 
 //

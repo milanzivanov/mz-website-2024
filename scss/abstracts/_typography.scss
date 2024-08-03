@@ -6,12 +6,11 @@
   font-family: $font-primary;
   font-weight: 400;
   position: relative;
-  font-size: 2.2rem;
+  font-size: 1.9rem;
   line-height: 1.1;
   width: 100%;
   color: var(--text);
   font-style: normal;
-  text-align: left;
   z-index: 5;
 
   @include breakpoint(large-desktop) {
@@ -19,6 +18,7 @@
     width: inherit;
     font-size: 3.5rem;
     line-height: 1.2;
+    text-align: left;
   }
   @include breakpoint(extra-large-desktop) {
     font-size: 4.1rem;
@@ -32,7 +32,7 @@
 
   // version 2
   text-wrap: balance;
-  mask: url("/img/grunge.png");
+  // mask: url("/img/grunge.png");
   word-break: break-word;
 
   @include breakpoint(desktop) {
@@ -53,7 +53,7 @@
 }
 
 .hero-container__text--pl {
-  padding: 1rem 0 1rem 1rem;
+  padding: 1rem;
 
   @include breakpoint(large-desktop) {
     padding: 0 0 0 1rem;
@@ -96,6 +96,7 @@
   width: 100%;
   color: var(--logo-color);
   padding-bottom: 0.2rem;
+  text-align: left;
 
   @include breakpoint(large-desktop) {
     font-weight: 700;
@@ -112,6 +113,9 @@
 
   @include breakpoint(desktop) {
     width: 70%;
+    transform: none;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -141,9 +145,8 @@
   height: 3px;
   background-color: var(--logo-color);
   bottom: 0;
-  left: 1rem;
   @include breakpoint(desktop) {
-    left: 0;
+    transform: none;
   }
 }
 
@@ -151,16 +154,18 @@
 .paragraph-text {
   position: relative;
   z-index: 5;
-  text-align: inherit;
   font-size: 0.925rem;
   padding: 1rem 0;
+  text-align: left;
 
   strong {
+    text-align: left;
     color: $default-black-color;
     font-weight: 500;
   }
 
   @include breakpoint(large-desktop) {
+    text-align: left;
     font-size: 1.025rem;
   }
 }

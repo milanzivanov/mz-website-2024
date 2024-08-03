@@ -36,11 +36,13 @@
 }
 
 .header__logo {
+  order: 4;
   height: 40px;
   width: 40px;
   z-index: 10;
 
   @include breakpoint(desktop) {
+    order: 0;
     margin-left: 0;
     height: 50px;
     width: 50px;
@@ -93,8 +95,10 @@
   position: relative;
   z-index: 10;
   display: inline-block;
+  order: 2;
 
   @include breakpoint(desktop) {
+    order: 0;
     margin-right: 5%;
     display: none;
   }
@@ -203,7 +207,7 @@ ul.nav__list {
       padding-bottom: 1rem;
       display: block;
       text-decoration: none;
-      text-align: start;
+      text-align: center;
       text-transform: lowercase;
       transition: all 0.3s ease-in-out;
 

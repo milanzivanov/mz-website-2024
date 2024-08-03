@@ -15,6 +15,11 @@
       as="style"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <main class="container" id="sectionHome">
@@ -273,47 +278,16 @@
     </section>
 
     <!-- //////////////// -->
-    <!-- projects portfolio -->
+    <!-- projects portfolio with swiper-->
     <section class="projects section-spacing" id="sectionProjects">
       <div class="wrapper-inner">
         <h2 class="h2-primary-title projects-title">Web portfolio</h2>
         <!-- <p class="paragraph-text">Some of my projects that I did in the past</p> -->
-      </div>
-      <div class="wrapper-inner container-position">
-        <div class="projects__content fade-in"></div>
-
-        <!-- modal -->
-        <div class="modal">
-          <div class="modal-container" id="projectDetailsModal">
-            <div class="modal-content">
-              <div class="modal-box modal-box--image">
-                <img src="#" alt="modal image" class="madal--image" />
-              </div>
-              <div class="modal-box modal-box--text">
-                <h3 class="h3-primary-title modal--title"></h3>
-                <p class="modal--text paragraph-text"></p>
-                <p class="modal--time paragraph-text"></p>
-
-                <div class="skill-container skill-container--br">
-                  <p class="paragraph-strong">Skill used:</p>
-                  <ul class="skill-modal-container"></ul>
-                </div>
-
-                <div class="btn-container">
-                  <a
-                    target="_blank"
-                    class="btn btn--theme btn--size modal-btn--link"
-                  >
-                    view it here 🚀
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <button type="button" class="modal--close" href="#">
-              &#10006;
-            </button>
-          </div>
+        <div class="swiper swiper-container">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-scrollbar"></div>
         </div>
       </div>
     </section>
@@ -403,6 +377,7 @@
       </a>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

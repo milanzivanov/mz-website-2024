@@ -204,7 +204,6 @@
     position: relative;
     border-radius: $default-border-radius;
     overflow: clip;
-    flex: 1 1 32%;
     margin-bottom: 0;
   }
 }
@@ -215,17 +214,11 @@
 }
 
 .project-image {
+  flex: 1;
   position: relative;
   z-index: 19;
   background-color: var(--text);
-  cursor: pointer;
-  transition-duration: 0.15s;
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project-image:hover {
-  opacity: 0.85;
+  transition: all 0.3s ease-in-out;
 }
 
 .project__item {
@@ -234,10 +227,6 @@
   flex: 1;
   z-index: 11;
   transition: all 0.3s ease-in-out;
-
-  @include breakpoint(large-desktop) {
-    display: none;
-  }
 }
 
 .project__text-container {
@@ -270,6 +259,7 @@
 .skill-modal-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: left;
 
   li {
     padding: 0.3rem 0.3rem 0.3rem 0;
@@ -284,69 +274,6 @@
   font-size: 1.5rem;
   color: var(--logo-color);
   margin-right: 0.3rem;
-}
-
-// modal
-.modal {
-  display: none;
-  @include breakpoint(large-desktop) {
-    display: flex;
-  }
-}
-
-.modal-container {
-  position: absolute;
-  z-index: 19;
-  background: var(--text);
-  inset: 0 0 0 0;
-  transform: translateX(-100%);
-  transition: ease-in-out 0.3s;
-  border-radius: $default-border-radius;
-}
-
-.show {
-  display: flex;
-  transform: translateX(0);
-}
-
-.modal-content {
-  display: flex;
-}
-
-.modal-box {
-  flex: 1;
-}
-
-.modal-box--image {
-  display: flex;
-  align-items: center;
-}
-
-.modal-box--text {
-  display: flex;
-  flex-direction: column;
-  background: white;
-  padding: 1rem;
-}
-
-.btn-container {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 100%;
-}
-
-.modal--close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0.5rem;
-  cursor: pointer;
-  background: transparent;
-  outline: none;
-  border: none;
-  color: $default-black-color;
 }
 
 /////////////////////
@@ -388,16 +315,11 @@
   position: fixed;
   padding: 10px;
   bottom: 25px;
-  right: 15px;
   margin: 5px;
   z-index: 20;
   border-radius: $default-border-radius;
   transition: all 0.3s ease-in-out;
-
-  @include breakpoint(large-desktop) {
-    right: 25px;
-    transform: none;
-  }
+  right: 25px;
 }
 
 .back-to-top-container__btn:hover {

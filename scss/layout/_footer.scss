@@ -23,6 +23,7 @@
     @include breakpoint(large-desktop) {
       font-size: 1rem;
       padding: 0;
+      text-align: left;
     }
   }
 
@@ -40,7 +41,6 @@
   justify-content: space-between;
   align-items: flex-start;
 
-  // border-bottom: 3px solid var(--logo-color);
   padding: 0 0 1rem 0;
 
   @include breakpoint(desktop) {
@@ -63,6 +63,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+
   list-style: none;
   padding: 0 0 0 1rem;
 
