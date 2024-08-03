@@ -6,7 +6,7 @@ const swiper = new Swiper(".swiper-container", {
   slidesPerView: 1,
   autoHeight: true,
   autoplay: {
-    delay: 5000,
+    delay: 10000,
     disableOnInteraction: false
   },
   scrollbar: {
@@ -232,7 +232,7 @@ async function populate() {
     populateSkills(skills);
     populateWorks(works);
   } catch (error) {
-    console.error("Error fetching data: ", error);
+    console.error("Error fetching data: ", error.message);
   }
 }
 
@@ -284,9 +284,11 @@ function populateWorks(works) {
                   </ul>
                 </div>
               </div>
-              <a href="${
-                work.linkSrc
-              }" target="_blank" rel="dns-prefetch" class="btn btn--size btn--theme border-radius">View It Here 🚀</a>
+              <div class="btn-container">
+                <a href="${
+                  work.linkSrc
+                }" target="_blank" rel="dns-prefetch" class="btn btn--size btn--theme border-radius">View It Here 🚀</a>            
+              </div>
             </div>
           </div>
         </div>

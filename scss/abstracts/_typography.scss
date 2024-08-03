@@ -96,7 +96,6 @@
   width: 100%;
   color: var(--logo-color);
   padding-bottom: 0.2rem;
-  text-align: left;
 
   @include breakpoint(large-desktop) {
     font-weight: 700;
@@ -107,8 +106,8 @@
   position: absolute;
   bottom: 0;
   content: "";
-  width: 80%;
-  height: 2px;
+  width: 100%;
+  height: 3px;
   background-color: var(--logo-color);
 
   @include breakpoint(desktop) {
@@ -141,11 +140,12 @@
 .h3-primary-title--footer::before {
   position: absolute;
   content: "";
-  width: 75%;
+  width: 90%;
   height: 3px;
   background-color: var(--logo-color);
   bottom: 0;
   @include breakpoint(desktop) {
+    width: 75%;
     transform: none;
   }
 }

@@ -1,6 +1,10 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+.btn-container {
+  text-align: right;
+}
+
 .btn {
   display: inline-block;
   width: 80%;

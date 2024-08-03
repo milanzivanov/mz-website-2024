@@ -186,7 +186,6 @@
 
 .projects__content {
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
   flex-direction: row;
 }
@@ -234,11 +233,19 @@
   display: flex;
   flex-direction: column;
   padding: 1rem;
+
+  @include breakpoint(large-desktop) {
+    padding: 2rem 1rem 2rem 1rem;
+  }
 }
 
 .project__text-container--description {
   width: 100%;
   padding-bottom: 1rem;
+
+  @include breakpoint(large-desktop) {
+    padding-bottom: 3rem;
+  }
 }
 
 .paragraph-text--project {
@@ -255,8 +262,7 @@
   color: $default-black-color;
 }
 
-.list-icon-container,
-.skill-modal-container {
+.list-icon-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
