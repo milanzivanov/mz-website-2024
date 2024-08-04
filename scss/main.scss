@@ -255,6 +255,10 @@
 .skill-container {
   padding: 0.5rem;
   background-color: #d0ddf1;
+
+  @include breakpoint(large-desktop) {
+    width: 50%;
+  }
 }
 
 .paragraph-strong {
