@@ -15,10 +15,34 @@
   overflow: clip;
   animation: none;
   height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.main__item {
+  flex: 0;
+}
+
+.main__item--top {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  background: url("https://ik.imagekit.io/milanz/milanzivanov_com/bg-main_Lz14YLljkz.jpeg")
+    no-repeat center center;
+  background-size: cover;
+}
+
+.main__item--top::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-shadow-color);
 }
 
 .hero {
-  height: calc(100% - 107px);
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,15 +51,9 @@
 .hero__bg {
   display: flex;
   position: relative;
+  z-index: 10;
   width: 100%;
   overflow: clip;
-  background: url("/img/it-wire.svg") repeat;
-  background-color: var(--bg2);
-  background-size: contain;
-
-  @include breakpoint(large-desktop) {
-    background-color: var(--text);
-  }
 }
 
 .hero-container {

@@ -1,21 +1,18 @@
 .header {
   width: 100%;
   position: relative;
+  box-shadow: 0 2px 10px var(--box-shadow-color);
 }
 
 .header.sticky {
-  background-color: var(--bg2);
+  background-color: var(--bg1);
   position: fixed;
   z-index: 20;
   transition: all 300ms;
-  border-bottom: 5px solid var(--bg1);
-
-  @include breakpoint(desktop) {
-    background-color: var(--text);
-  }
 
   .header__content {
     background-color: transparent;
+    box-shadow: none;
   }
 }
 
@@ -23,13 +20,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  background-color: var(--bg2);
   padding: 1rem;
 
   @include breakpoint(desktop) {
-    padding: 0.5rem;
-    background-color: var(--text);
     border-bottom-left-radius: $default-border-radius;
     border-bottom-right-radius: $default-border-radius;
   }
@@ -77,12 +70,8 @@
     transition: 0.5ms all ease-in-out;
     font-family: $font-primary;
 
-    @include breakpoint(desktop) {
-      color: var(--bg1);
-    }
-
     &:hover {
-      color: var(--logo-color--inverse);
+      color: var(--logo-color);
     }
   }
 

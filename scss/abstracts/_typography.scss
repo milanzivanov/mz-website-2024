@@ -6,15 +6,13 @@
   font-family: $font-primary;
   font-weight: 400;
   position: relative;
-  font-size: 1.9rem;
-  line-height: 1.1;
+  font-size: 1.7rem;
+  line-height: 1.3;
   width: 100%;
-  color: var(--text);
   font-style: normal;
   z-index: 5;
 
   @include breakpoint(large-desktop) {
-    color: var(--bg1);
     width: inherit;
     font-size: 3.5rem;
     line-height: 1.2;
@@ -27,24 +25,17 @@
 
 .h1-primary-title--text-bold {
   font-family: $font-secondary;
-  font-weight: 800;
+  font-weight: 900;
   color: var(--logo-color);
-
-  // version 2
   text-wrap: balance;
-  // mask: url("/img/grunge.png");
   word-break: break-word;
 
   @include breakpoint(desktop) {
-    // version 1
-    // background: var(--gradient-color);
-    // -webkit-text-fill-color: transparent;
-    // -webkit-background-clip: text;
-    // background-clip: text;
-    // animation: gradient 10s ease infinite;
-
-    // verson 2
-    color: var(--logo-color--inverse);
+    background: var(--gradient-color);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradient 10s ease infinite;
   }
 }
 
@@ -65,8 +56,7 @@
   align-items: center;
   justify-content: flex-start;
   font-family: $font-primary;
-  font-size: 1.2rem;
-  text-transform: uppercase;
+  font-size: 1.3rem;
   font-weight: 800;
   padding: 0 1rem 1rem 1rem;
   width: 100%;
@@ -74,9 +64,9 @@
   letter-spacing: 0.5px;
 
   @include breakpoint(large-desktop) {
+    text-transform: uppercase;
     letter-spacing: 2px;
-    padding: 0 0 1rem 0;
-    font-size: 1.3rem;
+    padding: 0 0 1rem 1rem;
   }
 
   @include breakpoint(extra-large-desktop) {
@@ -120,7 +110,7 @@
 
 .h3-primary-title--footer {
   position: relative;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   padding: 0 0 0.5rem 1rem;
   color: var(--logo-color);
   margin-bottom: 1rem;

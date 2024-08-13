@@ -1,7 +1,5 @@
 import "./scss/main.scss";
 
-// import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
-
 const swiper = new Swiper(".swiper-container", {
   slidesPerView: 1,
   autoHeight: true,
