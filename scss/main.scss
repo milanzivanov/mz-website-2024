@@ -29,8 +29,7 @@
   overflow: hidden;
   flex: 1;
   background: url("https://ik.imagekit.io/milanz/milanzivanov_com/bg-main_Lz14YLljkz.jpeg")
-    no-repeat center center;
-  background-size: cover;
+    no-repeat center center / cover;
 }
 
 .main__item--top::before {
