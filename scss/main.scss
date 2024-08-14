@@ -237,17 +237,17 @@
   }
 }
 
-.container-position {
-  position: relative;
-  overflow: clip;
-}
-
 .project-image {
+  padding: 0;
   flex: 1;
   position: relative;
   z-index: 19;
   background-color: var(--text);
   transition: all 0.3s ease-in-out;
+
+  @include breakpoint(large-desktop) {
+    padding: 1rem;
+  }
 }
 
 .project__item {
