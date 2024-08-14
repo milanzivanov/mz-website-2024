@@ -269,7 +269,7 @@ function populateSkills(skills) {
           .join("");
         container.insertAdjacentHTML("beforeend", additionalSkillsHtml);
         console.log(additionalSkillsHtml);
-        toggleButton.textContent = "Show Less";
+        toggleButton.textContent = "Show less";
       } else {
         container.innerHTML = skillsToShow
           .map(
@@ -281,7 +281,7 @@ function populateSkills(skills) {
             `
           )
           .join("");
-        toggleButton.textContent = "Show More";
+        toggleButton.textContent = "Show more";
       }
     });
   }
