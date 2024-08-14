@@ -40,6 +40,15 @@
   background-color: var(--logo-color--inverse);
 }
 
+.more-less-btn {
+  outline: none;
+  background-color: transparent;
+  color: var(--text);
+  border: none;
+  cursor: pointer;
+  order: 10;
+}
+
 .btn--theme {
   color: #fff;
   background-color: var(--logo-color);

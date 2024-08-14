@@ -236,16 +236,55 @@ async function populate() {
 
 function populateSkills(skills) {
   const container = document.querySelector(".skills-container-icons");
-  container.innerHTML = skills
+  const skillsToShow = skills.slice(0, 6);
+  const remainingSkills = skills.slice(6);
+
+  container.innerHTML = skillsToShow
     .map(
       (skill) => `
-    <div class="skill-icon border-radius">
-      <i class="${skill.iconClass}"></i>
-      <p>${skill.iconTitle}</p>
-    </div>
-  `
+        <div class="skill-icon border-radius">
+          <i class="${skill.iconClass}"></i>
+          <p>${skill.iconTitle}</p>
+        </div>
+      `
     )
     .join("");
+
+  if (remainingSkills.length > 0) {
+    const toggleButton = document.querySelector(".toggle-button");
+    toggleButton.classList.add("more-less-btn");
+    toggleButton.textContent = "Show More";
+
+    toggleButton.addEventListener("click", () => {
+      if (toggleButton.textContent === "Show More") {
+        const additionalSkillsHtml = remainingSkills
+          .map(
+            (skill) => `
+              <div class="skill-icon border-radius">
+                <i class="${skill.iconClass}"></i>
+                <p>${skill.iconTitle}</p>
+                </div>
+                `
+          )
+          .join("");
+        container.insertAdjacentHTML("beforeend", additionalSkillsHtml);
+        console.log(additionalSkillsHtml);
+        toggleButton.textContent = "Show Less";
+      } else {
+        container.innerHTML = skillsToShow
+          .map(
+            (skill) => `
+              <div class="skill-icon border-radius">
+                <i class="${skill.iconClass}"></i>
+                <p>${skill.iconTitle}</p>
+              </div>
+            `
+          )
+          .join("");
+        toggleButton.textContent = "Show More";
+      }
+    });
+  }
 }
 
 function populateWorks(works) {
