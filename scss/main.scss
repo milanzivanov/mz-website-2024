@@ -150,6 +150,11 @@
   background-color: var(--bg1);
   box-shadow: 0 2px 10px var(--box-shadow-color);
   padding: 0 0 1rem 0;
+
+  @include breakpoint(large-desktop) {
+    border-radius: $default-border-radius;
+    overflow: clip;
+  }
 }
 
 .skills-container-icons {
@@ -160,15 +165,12 @@
   gap: 1rem;
   flex-wrap: wrap;
   width: 100%;
-  overflow: clip;
 
   @include breakpoint(desktop) {
     margin: auto;
   }
   @include breakpoint(large-desktop) {
     width: 100%;
-    border-radius: $default-border-radius;
-    overflow: clip;
     margin: auto;
   }
 }

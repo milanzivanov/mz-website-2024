@@ -256,7 +256,7 @@ function populateSkills(skills) {
     toggleButton.textContent = "Show More";
 
     toggleButton.addEventListener("click", () => {
-      if (toggleButton.textContent === "Show More") {
+      if (toggleButton.textContent === "Show more") {
         const additionalSkillsHtml = remainingSkills
           .map(
             (skill) => `
@@ -268,7 +268,6 @@ function populateSkills(skills) {
           )
           .join("");
         container.insertAdjacentHTML("beforeend", additionalSkillsHtml);
-        console.log(additionalSkillsHtml);
         toggleButton.textContent = "Show less";
       } else {
         container.innerHTML = skillsToShow
@@ -288,7 +287,6 @@ function populateSkills(skills) {
 }
 
 function populateWorks(works) {
-  // const section = document.querySelector(".projects__content");
   const section = document.querySelector(".swiper-wrapper");
 
   section.innerHTML = works
