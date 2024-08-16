@@ -231,9 +231,9 @@
   @include breakpoint(large-desktop) {
     flex-direction: row;
     position: relative;
-    border-radius: $default-border-radius;
-    overflow: clip;
     margin-bottom: 0;
+    border-radius: $default-border-radius;
+    overflow: hidden;
   }
 }
 
@@ -242,7 +242,6 @@
   flex: 1;
   position: relative;
   z-index: 19;
-  background-color: var(--text);
   transition: all 0.3s ease-in-out;
 
   @include breakpoint(large-desktop) {
