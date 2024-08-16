@@ -1,5 +1,6 @@
 .header {
-  width: 100%;
+  width: auto;
+  height: 100%;
   position: relative;
   z-index: 10;
   background-color: var(--bg1);
@@ -19,8 +20,10 @@
 
 .header__content {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
   padding: 1rem;
 }
 
@@ -50,19 +53,20 @@
 @include breakpoint(desktop) {
   .nav-desktop {
     display: flex;
+
     z-index: 10;
-    margin: 0 auto 0 3rem;
   }
 
   .nav-desktop__list {
     display: flex;
+    flex-direction: column;
   }
 
   .nav-desktop__link {
     display: inline-block;
     color: var(--text);
     font-size: 1.1rem;
-    margin-left: 1.5rem;
+    padding-bottom: 2.5rem;
     transition: 0.5ms all ease-in-out;
     font-family: $font-primary;
 
