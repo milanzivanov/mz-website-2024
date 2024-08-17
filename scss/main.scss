@@ -12,12 +12,15 @@
 /// main
 .container {
   position: relative;
+  display: flex;
+  flex-direction: column;
   overflow: clip;
   animation: none;
   height: 100vh;
 
-  display: flex;
-  flex-direction: column;
+  @include breakpoint(large-desktop) {
+    flex-direction: row;
+  }
 }
 
 .main__item {
@@ -228,7 +231,6 @@
   flex-direction: column;
   margin-bottom: 4rem;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 2px 10px rgba(45, 45, 45, 0.1);
 
   @include breakpoint(large-desktop) {
     flex-direction: row;
