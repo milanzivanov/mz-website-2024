@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  box-shadow: 0 2px 10px var(--box-shadow-color);
 }
 
 .swiper-slide {

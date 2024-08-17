@@ -147,7 +147,7 @@ document.addEventListener("keydown", (e) => {
 // StickyNav
 const header = document.querySelector(".header");
 const main = document.querySelector("main");
-const headerHeight = header.getBoundingClientRect().height;
+// const headerHeight = header.getBoundingClientRect().height;
 
 const stickyNav = function (entries) {
   const [entry] = entries;
@@ -161,8 +161,8 @@ const stickyNav = function (entries) {
 
 const headerObserver = new IntersectionObserver(stickyNav, {
   root: null,
-  threshold: 0,
-  rootMargin: `-${headerHeight}px`
+  threshold: 0
+  // rootMargin: `-${headerHeight}px`
 });
 
 headerObserver.observe(main);
@@ -253,10 +253,10 @@ function populateSkills(skills) {
   if (remainingSkills.length > 0) {
     const toggleButton = document.querySelector(".toggle-button");
     toggleButton.classList.add("more-less-btn");
-    toggleButton.textContent = "Show More";
+    toggleButton.textContent = "Show more";
 
     toggleButton.addEventListener("click", () => {
-      if (toggleButton.textContent === "Show More") {
+      if (toggleButton.textContent === "Show more") {
         const additionalSkillsHtml = remainingSkills
           .map(
             (skill) => `
@@ -268,7 +268,6 @@ function populateSkills(skills) {
           )
           .join("");
         container.insertAdjacentHTML("beforeend", additionalSkillsHtml);
-        console.log(additionalSkillsHtml);
         toggleButton.textContent = "Show less";
       } else {
         container.innerHTML = skillsToShow
@@ -288,7 +287,6 @@ function populateSkills(skills) {
 }
 
 function populateWorks(works) {
-  // const section = document.querySelector(".projects__content");
   const section = document.querySelector(".swiper-wrapper");
 
   section.innerHTML = works

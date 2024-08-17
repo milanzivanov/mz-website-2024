@@ -13,9 +13,14 @@
 .container {
   position: relative;
   display: flex;
+  flex-direction: column;
   overflow: clip;
   animation: none;
   height: 100vh;
+
+  @include breakpoint(large-desktop) {
+    flex-direction: row;
+  }
 }
 
 .main__item {
@@ -150,7 +155,6 @@
   padding: 0 0 1rem 0;
 
   border-radius: $default-border-radius;
-  overflow: hidden;
 }
 
 .skills-container-icons {
@@ -161,7 +165,6 @@
   gap: 1rem;
   flex-wrap: wrap;
   width: 100%;
-  overflow: clip;
 
   @include breakpoint(desktop) {
     margin: auto;
@@ -226,7 +229,6 @@
   flex-direction: column;
   margin-bottom: 4rem;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 2px 10px rgba(45, 45, 45, 0.1);
 
   @include breakpoint(large-desktop) {
     flex-direction: row;

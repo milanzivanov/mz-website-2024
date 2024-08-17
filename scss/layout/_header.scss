@@ -1,10 +1,14 @@
 .header {
-  width: auto;
-  height: 100%;
+  width: 100%;
   position: relative;
   z-index: 10;
   background-color: var(--bg1);
   box-shadow: 0 2px 10px var(--box-shadow-color);
+
+  @include breakpoint(large-desktop) {
+    width: auto;
+    height: 100%;
+  }
 }
 
 .header.sticky {
@@ -20,11 +24,14 @@
 
 .header__content {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
   padding: 1rem;
+
+  @include breakpoint(large-desktop) {
+    height: 100%;
+    flex-direction: column;
+  }
 }
 
 .header__logo {
@@ -53,22 +60,30 @@
 @include breakpoint(desktop) {
   .nav-desktop {
     display: flex;
-
     z-index: 10;
   }
 
   .nav-desktop__list {
     display: flex;
-    flex-direction: column;
+
+    @include breakpoint(large-desktop) {
+      flex-direction: column;
+      padding-bottom: 2.5rem;
+    }
   }
 
   .nav-desktop__link {
     display: inline-block;
     color: var(--text);
     font-size: 1.1rem;
-    padding-bottom: 2.5rem;
     transition: 0.5ms all ease-in-out;
     font-family: $font-primary;
+    margin: 0 auto 0 1rem;
+
+    @include breakpoint(large-desktop) {
+      padding-bottom: 2.5rem;
+      margin: 0;
+    }
 
     &:hover {
       color: var(--logo-color);
