@@ -33,8 +33,6 @@
   flex: 1;
   background: url("https://ik.imagekit.io/milanz/milanzivanov_com/bg-main_Lz14YLljkz.jpeg")
     no-repeat center center / cover;
-
-  // background-attachment: fixed;
 }
 
 .main__item--top::before {
@@ -168,7 +166,7 @@
 
 .skills-container-icons {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 1rem;
   gap: 1rem;
@@ -199,7 +197,7 @@
     flex: 1 1 25%;
   }
   @include breakpoint(desktop) {
-    flex: 1 1 15%;
+    flex: 0 1 15%;
   }
   @include breakpoint(large-desktop) {
     font-size: 2.5rem;
